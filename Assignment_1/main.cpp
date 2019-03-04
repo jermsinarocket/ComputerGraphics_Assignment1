@@ -21,11 +21,42 @@ Controller control;
 void renderScene(void) {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	control.renderStart();
+	
+	if (!control.paused) {
+		//Start Rendering
+		control.renderStart();
+		//Update screen
+		glutSwapBuffers();
+	}
 
-	//Update screen
-	glutSwapBuffers();
 }
+
+void processMouse(int button, int state, int x, int y) {
+	if (state == GLUT_DOWN) {
+		if (button == GLUT_LEFT_BUTTON) {
+			control.clicked((float)((x / currentWidth) - 1), (float)((y / currentHeight) - 1));
+		}
+	}
+}
+
+void processKeys(unsigned char key, int x, int y) {
+	if (key == 'p') {
+		
+		if (control.paused) {
+			control.paused = false;
+		}
+		else {
+			control.paused = true;
+		}
+	}
+
+	else if (key == 27){
+		exit(EXIT_SUCCESS);
+	}
+	
+
+}
+
 
 
 void changeSize(int w, int h) {
@@ -65,6 +96,8 @@ int main(int argc, char **argv)
 	glutDisplayFunc(renderScene);
 	glutReshapeFunc(changeSize);
 	glutIdleFunc(renderScene);
+	glutKeyboardFunc(processKeys);
+	glutMouseFunc(processMouse);
 
 	glutMainLoop();
 

@@ -17,17 +17,17 @@ public:
 	void renderStart();
 	void renderBg();
 	void button();
-
+	void clicked(float x, float y);
 	bool gameOver;
 	bool gameRunning;
 
 	Background bg;
 
 	float currentScore;
+	bool paused;
 protected:
 private:
 	SoundController soundcontroller;
-	float wait = 0;
 
 };
 

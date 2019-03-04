@@ -17,9 +17,7 @@ public:
 	/** Default constructor */
 	SoundController();
 	void startTheme();
-	void background();
 	void clickStart();
-	bool mute;
 protected:
 private:
 };

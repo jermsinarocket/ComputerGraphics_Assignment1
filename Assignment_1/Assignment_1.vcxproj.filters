@@ -21,9 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="colour.cpp">
       <Filter>Source Files\src</Filter>
     </ClCompile>
@@ -41,6 +38,9 @@
     </ClCompile>
     <ClCompile Include="soundcontroller.cpp">
       <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <Media Include="..\..\..\..\..\Desktop\101-opening.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="..\..\..\..\..\Desktop\start.wav">
       <Filter>Resource Files</Filter>
     </Media>
   </ItemGroup>

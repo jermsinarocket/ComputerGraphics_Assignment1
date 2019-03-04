@@ -7,16 +7,19 @@ Controller::Controller()
 
 void Controller::renderStart() {
 
+	//Render the background
 	bg.render();
-	renderBg();
-	button();
+
+
 
 	if (gameRunning) {
 	}
 	else {
+		//Render the start screen
+		renderBg();
+		button();
 		glPushMatrix();
-		glPushMatrix();
-		glTranslatef(2.6, -3.6, 0);
+			glTranslatef(2.6, -3.6, 0);
 		glPopMatrix();
 	}
 }
@@ -49,6 +52,36 @@ void Controller::renderBg() {
 	logo.text(color, (char*)"Click below to start!");
 	glPopMatrix();
 
+	glPushMatrix();
+		glTranslatef(-0.6, -1.6, 0);
+		logo.text(color, (char*)"Player 1:");
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(-1.1, -2.0, 0);
+		logo.text(color, (char*) "Direction: A / D");
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(-0.6, -2.5, 0);
+	logo.text(color, (char*)"Player 2:");
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(-1.1, -2.9, 0);
+	logo.text(color, (char*) "Direction: Arrow Keys (<- | ->)");
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(0.35, -3.5, 0);
+		logo.text(color, (char*) "PRESS 'p' to pause the game");
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(0.22, -3.9, 0);
+		logo.text(color, (char*) "PRESS 'esc' to exit the game");
+	glPopMatrix();
+
 }
 
 void Controller::button() {
@@ -67,3 +100,19 @@ void Controller::button() {
 		logo.text(btnColor, (char*)"Start!");
 	glPopMatrix();
 }
+
+
+void Controller::clicked(float x, float y) {
+
+	if (!gameRunning) {
+
+		if (x < -0.4 && x > -0.56 && y < -0.4 && y > -0.6) {
+
+			gameRunning = true;
+			gameOver = false;
+			soundcontroller.clickStart();
+
+		}
+	}
+}
+
