@@ -33,6 +33,15 @@
     <ClCompile Include="background.cpp">
       <Filter>Source Files\src</Filter>
     </ClCompile>
+    <ClCompile Include="controller.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="text.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="soundcontroller.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colour.h">
@@ -44,5 +53,27 @@
     <ClInclude Include="background.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
+    <ClInclude Include="controller.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="text.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="soundcontroller.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Assignment_1.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\..\..\..\Desktop\101-opening.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
   </ItemGroup>
 </Project>

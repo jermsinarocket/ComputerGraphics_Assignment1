@@ -9,13 +9,10 @@ public:
 	Background();
 	void render();
 
-	void hills();
-	void smallHills();
 	void sun();
 	void cloud();
 
-	float hillX, sunScale, smallHillX, cloudFarX, cloudNearX;
-	bool sunScalerH;
+	float sunScale, cloudFarX, cloudNearX;
 
 	/** Default destructor */
 	virtual ~Background();

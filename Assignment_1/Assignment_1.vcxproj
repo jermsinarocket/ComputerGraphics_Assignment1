@@ -21,13 +21,26 @@
   <ItemGroup>
     <ClCompile Include="background.cpp" />
     <ClCompile Include="colour.cpp" />
+    <ClCompile Include="controller.cpp" />
     <ClCompile Include="shapes.cpp" />
+    <ClCompile Include="soundcontroller.cpp" />
     <ClCompile Include="Source1.cpp" />
+    <ClCompile Include="text.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="background.h" />
     <ClInclude Include="colour.h" />
+    <ClInclude Include="controller.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="shapes.h" />
+    <ClInclude Include="soundcontroller.h" />
+    <ClInclude Include="text.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Assignment_1.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\..\..\..\Desktop\101-opening.wav" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

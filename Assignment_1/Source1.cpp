@@ -2,10 +2,11 @@
 #include <iostream> 
 #include <GL/glew.h> 
 #include <GL/freeglut.h> 
+#include <windows.h>
 #include "colour.h"
 #include "shapes.h"
-#include <windows.h>
 #include "background.h"
+#include "controller.h"
 
 using namespace std;
 
@@ -13,22 +14,14 @@ using namespace std;
 #define SCREEN_HEIGHT 800
 #define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
 
-float currentWidth = 1024;
-float currentHeight = 600;
+float currentWidth = 1440;
+float currentHeight = 800;
+Controller control;
 
 void renderScene(void) {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	//control.renderStart();
-	//Clear color buffer
-	glClear(GL_COLOR_BUFFER_BIT);
-
-	//Reset modelview matrix
-	glLoadIdentity();
-	Background bg;
-
-	bg.render();
+	control.renderStart();
 
 	//Update screen
 	glutSwapBuffers();

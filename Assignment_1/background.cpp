@@ -11,27 +11,27 @@ Background::Background() {
 
 void Background::render() {
 	glPushMatrix();
-	glTranslatef(-9, 4, 0);
-	glScalef(sunScale, sunScale, 1);
-	sun();
+		glTranslatef(-9, 4, 0);
+		glScalef(sunScale, sunScale, 1);
+		sun();
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslatef(cloudFarX, 4.5, 0);
-	glScalef(.8, .8, 1);
-	cloud();
+		glTranslatef(cloudFarX, 4.5, 0);
+		glScalef(.8, .8, 1);
+		cloud();
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslatef(cloudFarX + 5, 5, 0);
-	glScalef(.8, .8, 1);
-	cloud();
+		glTranslatef(cloudFarX + 5, 5, 0);
+		glScalef(.8, .8, 1);
+		cloud();
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslatef(cloudNearX + 5, 2, 0);
-	glScalef(1.2, 1.2, 1);
-	cloud();
+		glTranslatef(cloudNearX + 5, 2, 0);
+		glScalef(1.2, 1.2, 1);
+		cloud();
 	glPopMatrix();
 
 }
