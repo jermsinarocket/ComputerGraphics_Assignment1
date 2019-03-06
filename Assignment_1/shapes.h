@@ -10,6 +10,7 @@ public:
 	static void circle(Color);
 	static void triangle(Color);
 	static void octagon(Color);
+	static void rectangle(double x1, double y1, double x2, double y2);
 	/** Default destructor */
 	virtual ~Shapes();
 protected:

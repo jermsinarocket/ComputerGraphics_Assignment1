@@ -12,18 +12,18 @@ Shapes::Shapes() {
 }
 
 void Shapes::rect(Color color) {
-
-	glPushMatrix();
 	glColor3f(SETCOLOR(color));
 	glBegin(GL_POLYGON);
-	glVertex3f(0, 0, -5.0);
-	glVertex3f(1, 0.0, -5.0);
-	glVertex3f(1, 1, -5.0);
-	glVertex3f(0, 1, -5.0);
+		glVertex3f(0, 0, -5.0);
+		glVertex3f(1, 0.0, -5.0);
+		glVertex3f(1, 1, -5.0);
+		glVertex3f(0, 1, -5.0);
 	glEnd();
-	glPopMatrix();
 }
 
+void Shapes::rectangle(double x1, double y1, double x2, double y2) {
+	glRectf(x1, y1, x2, y2);
+}
 
 
 void Shapes::circle(Color color) {

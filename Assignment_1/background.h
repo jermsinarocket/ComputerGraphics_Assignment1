@@ -12,8 +12,6 @@ public:
 	void sun();
 	void cloud();
 
-	float sunScale, cloudFarX, cloudNearX;
-
 	/** Default destructor */
 	virtual ~Background();
 protected:
