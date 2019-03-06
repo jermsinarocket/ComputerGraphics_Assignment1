@@ -42,6 +42,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="net.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colour.h">
@@ -65,6 +68,9 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="net.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Assignment_1.rc">
@@ -72,10 +78,10 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Media Include="..\..\..\..\..\Desktop\101-opening.wav">
+    <Media Include="include\openingTheme.wav">
       <Filter>Resource Files</Filter>
     </Media>
-    <Media Include="..\..\..\..\..\Desktop\start.wav">
+    <Media Include="include\gameTheme.wav">
       <Filter>Resource Files</Filter>
     </Media>
   </ItemGroup>

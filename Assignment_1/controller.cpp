@@ -1,30 +1,38 @@
 #include "controller.h"
-
+#include "net.h"
+#define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
 Controller::Controller()
 {
 	soundcontroller.startTheme();
 }
 
 void Controller::renderStart() {
-
 	//Render the background
 	bg.render();
-
+	
 	if (gameRunning) {
+		Net net(1440, 800);
+		net.render();
 	}
 	else {
 		//Render the start screen
 		renderBg();
-		button();
-		glPushMatrix();
+		//button();
+		/*glPushMatrix();
 			glTranslatef(2.6, -3.6, 0);
-		glPopMatrix();
+		glPopMatrix();*/
 	}
 }
-
 void Controller::renderBg() {
 	Color color;
 	color.setColor("d35400");
+
+	glPushMatrix();
+		glColor3f(SETCOLOR(color));
+		Shapes::rectangle(500.0,200.0,1000.0, 700.0);
+	glPopMatrix();
+
+	/*
 	glPushMatrix();
 		glTranslatef(-4.5, -4.5, 0);
 		glScalef(9, 9, 1);
@@ -79,7 +87,7 @@ void Controller::renderBg() {
 		glTranslatef(0.22, -3.9, 0);
 		logo.text(color, (char*) "PRESS 'esc' to exit the game");
 	glPopMatrix();
-
+	*/
 }
 
 void Controller::button() {

@@ -5,6 +5,7 @@
 #include <GL/glut.h>
 #include <GL/glu.h>
 #include "background.h"
+#include "net.h"
 #include "soundcontroller.h"
 #include "text.h"
 

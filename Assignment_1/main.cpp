@@ -1,4 +1,3 @@
-
 #include <iostream> 
 #include <GL/glew.h> 
 #include <GL/glut.h> 
@@ -17,6 +16,7 @@ using namespace std;
 float currentWidth = 1440;
 float currentHeight = 800;
 Controller control;
+Net net(currentWidth,currentHeight);
 
 void renderScene(void) {
 
@@ -77,10 +77,12 @@ void changeSize(int w, int h) {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glViewport(0, 0, w, h);
-
+	gluOrtho2D(0, w, 0,h );
 	currentWidth = w;
 	currentHeight = h;
-	gluPerspective(100, ratio, 1, 100);
+
+	glDisable(GL_DEPTH_TEST);
+	//gluPerspective(100, ratio, 1, 100);
 	glMatrixMode(GL_MODELVIEW);
 
 }
@@ -89,7 +91,7 @@ int main(int argc, char **argv)
 {
 
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowPosition(50, 50);
 	glutInitWindowSize(1440,800);
 	glutCreateWindow("Pokemon Beach Volleyball");

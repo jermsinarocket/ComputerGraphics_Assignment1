@@ -4,87 +4,69 @@
 #include <windows.h>
 #include <GL/glut.h>
 #include <GL/glu.h>
-Background::Background() {
+#define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
 
-	cloudFarX = cloudNearX = 0.0;
-	sunScale = 1;
+Background::Background() {
 }
 
 void Background::render() {
-
+	
+	sun();
+	
 	glPushMatrix();
-		glTranslatef(-9, 4, 0);
-		glScalef(sunScale, sunScale, 1);
-		sun();
-	glPopMatrix();
-
-	glPushMatrix();
-		glTranslatef(cloudFarX, 4.5, 0);
-		glScalef(.8, .8, 1);
+		glTranslatef(0, 4.5, 0);
 		cloud();
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(cloudFarX + 5, 5, 0);
-		glScalef(.8, .8, 1);
+		glTranslatef(250, 100, 0);
 		cloud();
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(cloudNearX + 5, 2, 0);
-		glScalef(1.2, 1.2, 1);
+		glTranslatef(500, 70, 0);
 		cloud();
 	glPopMatrix();
+
 
 }
 
 void Background::sun() {
-	Color color;
-	// color of background wrapper
-	color.setColor("bbedf9");
 
-	glPushMatrix();
-		glScalef(10, 10, 1);
-		glTranslatef(-.5, -.4, 0);
-		Shapes::rect(color);
-	glPopMatrix();
-	// color of sun background wrapper
+	Color color;
+
 	color.setColor("fdf78c");
 
+	//colour of sun background
+	glColor3f(SETCOLOR(color));
 	glPushMatrix();
-		glScalef(1.5, 1.5, 1);
-		glTranslatef(-.155, -.155, 0);
-		Shapes::rect(color);
+		Shapes::rectangle(125.0, 600.0, 275.0, 750.0);
 	glPopMatrix();
+
 	// color of sun
+
 	color.setColor("fff200");
-
+	glColor3f(SETCOLOR(color));
 	glPushMatrix();
-		Shapes::rect(color);
+		Shapes::rectangle(135.0, 620.0, 245.0, 740.0);
 	glPopMatrix();
-
 }
+
 void Background::cloud() {
+
 	Color color;
-	color.setColor("ffffff");
+
+	color.setColor("FFFFFF");
+
+	glColor3f(SETCOLOR(color));
 
 	glPushMatrix();
-		glTranslatef(.4, 0, 0);
-		Shapes::rect(color);
+		Shapes::rectangle(550.0, 500.0, 675.0, 550.0);
 	glPopMatrix();
 
 	glPushMatrix();
-		glScalef(.5, .5, 1);
-		glTranslatef(0, 0, 0);
-		Shapes::rect(color);
+		Shapes::rectangle(575.0, 500.0,650.0,600.0);
 	glPopMatrix();
-
-	glPushMatrix();
-		glScalef(.5, .5, 1);
-		glTranslatef(2.5, 0, 0);
-		Shapes::rect(color);
-	glPopMatrix();
-
 
 }
 
