@@ -1,6 +1,9 @@
 #ifndef COLOUR_H
 #define COLOUR_H
 #include <string>
+#include <cstring>
+#include <sstream>
+#include <iostream>
 
 class Color
 {

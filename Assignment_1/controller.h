@@ -8,6 +8,7 @@
 #include "net.h"
 #include "soundcontroller.h"
 #include "text.h"
+#define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
 
 using namespace std;
 class Controller

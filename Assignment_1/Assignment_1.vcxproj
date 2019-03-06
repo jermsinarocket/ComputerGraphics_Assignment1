@@ -23,6 +23,7 @@
     <ClCompile Include="colour.cpp" />
     <ClCompile Include="controller.cpp" />
     <ClCompile Include="net.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="shapes.cpp" />
     <ClCompile Include="soundcontroller.cpp" />
     <ClCompile Include="main.cpp" />
@@ -33,6 +34,7 @@
     <ClInclude Include="colour.h" />
     <ClInclude Include="controller.h" />
     <ClInclude Include="net.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="shapes.h" />
     <ClInclude Include="soundcontroller.h" />

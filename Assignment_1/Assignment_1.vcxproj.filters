@@ -45,6 +45,9 @@
     <ClCompile Include="net.cpp">
       <Filter>Source Files\src</Filter>
     </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colour.h">
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="net.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
   </ItemGroup>

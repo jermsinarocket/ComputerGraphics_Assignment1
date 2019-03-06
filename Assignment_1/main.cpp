@@ -6,6 +6,7 @@
 #include "shapes.h"
 #include "background.h"
 #include "controller.h"
+#include "player.h"
 
 using namespace std;
 
@@ -22,12 +23,11 @@ void renderScene(void) {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
-	if (!control.paused) {
 		//Start Rendering
 		control.renderStart();
 		//Update screen
 		glutSwapBuffers();
-	}
+	
 
 }
 
@@ -41,17 +41,7 @@ void processMouse(int button, int state, int x, int y) {
 }
 
 void processKeys(unsigned char key, int x, int y) {
-	if (key == 'p') {
-		
-		if (control.paused) {
-			control.paused = false;
-		}
-		else {
-			control.paused = true;
-		}
-	}
-
-	else if (key == 27){
+	if (key == 27){
 		exit(EXIT_SUCCESS);
 	}
 	
@@ -63,8 +53,8 @@ void processKeys(unsigned char key, int x, int y) {
 void changeSize(int w, int h) {
 
 	//Prevents resize
-	//glutReshapeWindow(SCREEN_WIDTH, SCREEN_HEIGHT);
-	//glutPositionWindow(50, 50);
+	glutReshapeWindow(SCREEN_WIDTH, SCREEN_HEIGHT);
+	glutPositionWindow(50, 50);
 
 
 	//To follow motion

@@ -2,7 +2,6 @@
 #include <windows.h>
 #include <GL/glut.h>
 #include <GL/glu.h>
-#include "colour.h"
 #include <math.h>
 #define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
 #define PI 3.1415926535897932384626433832795
@@ -11,6 +10,10 @@
 Shapes::Shapes() {
 }
 
+void Shapes::rectangle(double x1, double y1, double x2, double y2) {
+	glRectf(x1, y1, x2, y2);
+}
+/*
 void Shapes::rect(Color color) {
 	glColor3f(SETCOLOR(color));
 	glBegin(GL_POLYGON);
@@ -21,9 +24,7 @@ void Shapes::rect(Color color) {
 	glEnd();
 }
 
-void Shapes::rectangle(double x1, double y1, double x2, double y2) {
-	glRectf(x1, y1, x2, y2);
-}
+
 
 
 void Shapes::circle(Color color) {
@@ -66,6 +67,7 @@ void Shapes::octagon(Color color) {
 	glEnd();
 	glPopMatrix();
 }
+*/
 Shapes::~Shapes()
 {
 	//dtor

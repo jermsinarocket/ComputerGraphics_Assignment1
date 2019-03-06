@@ -35,17 +35,17 @@ void Text::score(Color color, int score) {
 }
 
 void Text::text(Color color, char st[]) {
+
 	int l, i;
 	l = strlen(st);
-	glPushMatrix();
 
 	glColor3f(SETCOLOR(color));
-	glRasterPos3f(0, 0, -5);
+	glRasterPos2f(650, 560);
 	for (i = 0; i < l; i++) {
+
 		glutBitmapCharacter(GLUT_BITMAP_9_BY_15, st[i]);
 	}
 
 
-	glPopMatrix();
 }
 

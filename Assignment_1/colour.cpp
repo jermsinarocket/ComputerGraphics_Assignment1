@@ -1,8 +1,5 @@
 #include "colour.h"
-#include <string>
-#include <cstring>
-#include <sstream>
-#include <iostream>
+
 
 using namespace std;
 Color::Color()
