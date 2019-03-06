@@ -48,6 +48,9 @@
     <ClCompile Include="player.cpp">
       <Filter>Source Files\src</Filter>
     </ClCompile>
+    <ClCompile Include="collision.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colour.h">
@@ -75,6 +78,9 @@
       <Filter>Source Files\include</Filter>
     </ClInclude>
     <ClInclude Include="player.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="collision.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
   </ItemGroup>

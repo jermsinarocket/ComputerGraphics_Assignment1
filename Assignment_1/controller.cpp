@@ -12,10 +12,10 @@ void Controller::renderStart() {
 	bg.render();
 	
 	if (gameRunning) {
+
 		Net net(1440, 800);
 		net.render();
-		Player player1;
-		Player player2;
+		player1.render();
 	}
 	else {
 		//Render the start screen

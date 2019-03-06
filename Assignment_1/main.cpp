@@ -44,8 +44,22 @@ void processKeys(unsigned char key, int x, int y) {
 	if (key == 27){
 		exit(EXIT_SUCCESS);
 	}
+
 	
 
+}
+
+void specialKeyboard(int key, int x, int y) { 
+	
+	switch (key) { 
+
+		case GLUT_KEY_RIGHT: 
+			control.player1.moveRight();
+			break; 
+		case GLUT_KEY_LEFT: 
+			control.player1.moveLeft();
+			break; 
+	} 
 }
 
 
@@ -98,6 +112,7 @@ int main(int argc, char **argv)
 	glutIdleFunc(renderScene);
 	glutKeyboardFunc(processKeys);
 	glutMouseFunc(processMouse);
+	glutSpecialFunc(specialKeyboard);
 
 	glutMainLoop();
 

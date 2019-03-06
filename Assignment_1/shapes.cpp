@@ -13,19 +13,18 @@ Shapes::Shapes() {
 void Shapes::rectangle(double x1, double y1, double x2, double y2) {
 	glRectf(x1, y1, x2, y2);
 }
-/*
-void Shapes::rect(Color color) {
+
+void Shapes::quad(double x1, double y1, double x2, double y2,Color color) {
 	glColor3f(SETCOLOR(color));
-	glBegin(GL_POLYGON);
-		glVertex3f(0, 0, -5.0);
-		glVertex3f(1, 0.0, -5.0);
-		glVertex3f(1, 1, -5.0);
-		glVertex3f(0, 1, -5.0);
+	glBegin(GL_QUADS);
+		glVertex2f(x1, y1);
+		glVertex2f(x1, y2);
+		glVertex2f(x2, y2);
+		glVertex2f(x2, y1);
 	glEnd();
+
 }
-
-
-
+/*
 
 void Shapes::circle(Color color) {
 	glPushMatrix();
@@ -38,37 +37,9 @@ void Shapes::circle(Color color) {
 
 
 }
-void Shapes::triangle(Color color) {
-	glPushMatrix();
-	glColor3f(SETCOLOR(color));
-	glBegin(GL_POLYGON);
-	glVertex3f(-1, 0, -5.0);
-	glVertex3f(1, 0, -5.0);
-	glVertex3f(.02, 1, -5.0);
-	glVertex3f(0, 1, -5.0);
 
-	glEnd();
-	glPopMatrix();
-}
-
-void Shapes::octagon(Color color) {
-	float angle = 0.0;
-	float dAngle = PI / 4.0;
-	float x, y;
-	glPushMatrix();
-	glColor3f(SETCOLOR(color));
-	glBegin(GL_POLYGON);
-	for (int i = 0; i < 8; i++) {
-		double theta = i * 2.*PI / 8.;
-		x = 1 * cos(theta);
-		y = 1 * sin(theta);
-		glVertex3f(x, y, -5.0);
-	}
-	glEnd();
-	glPopMatrix();
-}
 */
 Shapes::~Shapes()
 {
-	//dtor
+	
 }

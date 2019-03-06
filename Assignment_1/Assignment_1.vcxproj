@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="background.cpp" />
+    <ClCompile Include="collision.cpp" />
     <ClCompile Include="colour.cpp" />
     <ClCompile Include="controller.cpp" />
     <ClCompile Include="net.cpp" />
@@ -31,6 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="background.h" />
+    <ClInclude Include="collision.h" />
     <ClInclude Include="colour.h" />
     <ClInclude Include="controller.h" />
     <ClInclude Include="net.h" />

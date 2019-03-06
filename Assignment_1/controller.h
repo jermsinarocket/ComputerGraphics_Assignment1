@@ -8,6 +8,7 @@
 #include "net.h"
 #include "soundcontroller.h"
 #include "text.h"
+#include "player.h"
 #define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
 
 using namespace std;
@@ -25,6 +26,7 @@ public:
 
 	Background bg;
 
+	Player player1;
 	float currentScore;
 	bool paused;
 protected:

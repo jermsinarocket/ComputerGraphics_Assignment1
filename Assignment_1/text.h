@@ -16,13 +16,10 @@ class Text
 public:
 	/** Default constructor */
 	Text();
-	void fire(Color color);
 	void score(Color color, int score);
 	void text(Color color, char st[]);
 protected:
 private:
-
-	int duration;
 };
 
 #endif // TEXT_H
