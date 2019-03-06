@@ -10,8 +10,6 @@ void Controller::renderStart() {
 	//Render the background
 	bg.render();
 
-
-
 	if (gameRunning) {
 	}
 	else {

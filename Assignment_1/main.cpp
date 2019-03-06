@@ -1,7 +1,7 @@
 
 #include <iostream> 
 #include <GL/glew.h> 
-#include <GL/freeglut.h> 
+#include <GL/glut.h> 
 #include <windows.h>
 #include "colour.h"
 #include "shapes.h"
@@ -31,6 +31,7 @@ void renderScene(void) {
 
 }
 
+//For Start Buttton
 void processMouse(int button, int state, int x, int y) {
 	if (state == GLUT_DOWN) {
 		if (button == GLUT_LEFT_BUTTON) {
@@ -60,9 +61,16 @@ void processKeys(unsigned char key, int x, int y) {
 
 
 void changeSize(int w, int h) {
-	glutReshapeWindow(SCREEN_WIDTH, SCREEN_HEIGHT);
-	glutPositionWindow(50, 50);
 
+	//Prevents resize
+	//glutReshapeWindow(SCREEN_WIDTH, SCREEN_HEIGHT);
+	//glutPositionWindow(50, 50);
+
+
+	//To follow motion
+	//gluLookAt(0.0, 0.0, 0.0, 5.0, 5.0, 5.0, 0, 1, 0);
+
+	//Protect against divide by zero
 	if (h == 0)
 		h = 1;
 	float ratio = w * 1.0 / h;
