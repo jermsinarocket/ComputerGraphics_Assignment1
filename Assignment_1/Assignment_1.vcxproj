@@ -19,7 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ai.cpp" />
     <ClCompile Include="background.cpp" />
+    <ClCompile Include="ball.cpp" />
     <ClCompile Include="collision.cpp" />
     <ClCompile Include="colour.cpp" />
     <ClCompile Include="controller.cpp" />
@@ -31,7 +33,9 @@
     <ClCompile Include="text.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ai.h" />
     <ClInclude Include="background.h" />
+    <ClInclude Include="ball.h" />
     <ClInclude Include="collision.h" />
     <ClInclude Include="colour.h" />
     <ClInclude Include="controller.h" />
@@ -46,8 +50,10 @@
     <ResourceCompile Include="Assignment_1.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="include\gameTheme.wav" />
+    <Media Include="include\bounceSound.wav" />
+    <Media Include="include\clickStart.wav" />
     <Media Include="include\openingTheme.wav" />
+    <Media Include="include\scoreSound.wav" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

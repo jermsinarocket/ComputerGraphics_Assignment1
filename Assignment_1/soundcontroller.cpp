@@ -13,5 +13,13 @@ void SoundController::startTheme() {
 
 
 void SoundController::clickStart() {
-		PlaySound(MAKEINTRESOURCE(IDR_WAVE2), NULL, SND_RESOURCE | SND_ASYNC | SND_LOOP);
+		PlaySound(MAKEINTRESOURCE(IDR_WAVE2), NULL, SND_RESOURCE | SND_ASYNC);
+}
+
+void SoundController::ballBounce() {
+	PlaySound(MAKEINTRESOURCE(IDR_WAVE3), NULL, SND_RESOURCE | SND_ASYNC);
+}
+
+void SoundController::scoreSound() {
+	PlaySound(MAKEINTRESOURCE(IDR_WAVE4), NULL, SND_RESOURCE | SND_ASYNC);
 }

@@ -70,10 +70,6 @@ void changeSize(int w, int h) {
 	glutReshapeWindow(SCREEN_WIDTH, SCREEN_HEIGHT);
 	glutPositionWindow(50, 50);
 
-
-	//To follow motion
-	//gluLookAt(0.0, 0.0, 0.0, 5.0, 5.0, 5.0, 0, 1, 0);
-
 	//Protect against divide by zero
 	if (h == 0)
 		h = 1;
@@ -86,7 +82,7 @@ void changeSize(int w, int h) {
 	currentHeight = h;
 
 	glDisable(GL_DEPTH_TEST);
-	//gluPerspective(100, ratio, 1, 100);
+	
 	glMatrixMode(GL_MODELVIEW);
 
 }

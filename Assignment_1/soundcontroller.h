@@ -18,6 +18,8 @@ public:
 	SoundController();
 	void startTheme();
 	void clickStart();
+	void ballBounce();
+	void scoreSound();
 protected:
 private:
 };

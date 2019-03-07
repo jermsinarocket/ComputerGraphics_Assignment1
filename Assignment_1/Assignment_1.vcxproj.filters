@@ -51,6 +51,12 @@
     <ClCompile Include="collision.cpp">
       <Filter>Source Files\src</Filter>
     </ClCompile>
+    <ClCompile Include="ball.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="ai.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colour.h">
@@ -83,6 +89,12 @@
     <ClInclude Include="collision.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
+    <ClInclude Include="ball.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="ai.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Assignment_1.rc">
@@ -93,7 +105,13 @@
     <Media Include="include\openingTheme.wav">
       <Filter>Resource Files</Filter>
     </Media>
-    <Media Include="include\gameTheme.wav">
+    <Media Include="include\bounceSound.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="include\clickStart.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="include\scoreSound.wav">
       <Filter>Resource Files</Filter>
     </Media>
   </ItemGroup>

@@ -14,14 +14,25 @@ class Collision
 public:
 	/** Default constructor */
 	Collision();
-	bool leftNetCollision(double x2);
-	bool leftWindowCollision(double x2);
+	bool leftNetCollision(double x);
+	bool leftWindowCollision(double x);
+	bool rightNetCollision(double x);
+	bool rightWindowCollision(double x);
+	bool ballRightWindowCollision(double x, double radius);
+	bool ballLeftWindowCollision(double x,double radius);
+	bool ballTopWindowCollision(double y, double radius);
+	bool ballBottomWindowCollision(double y, double radius);
+	bool ballRightNetCollision(double x,double y, double radius,double speed);
+	bool ballLeftNetCollision(double x,double y, double radius,double speed);
 	virtual ~Collision();
 
 	double netLeftX;
 	double netRightX;
+	double netHeight;
 	double windowLeftX;
 	double windowRightX;
+	double windowTopX;
+	double windowBottomX;
 
 
 protected:

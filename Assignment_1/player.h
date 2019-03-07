@@ -20,6 +20,8 @@ public:
 	void moveRight();
 	void moveLeft();
 	void scoreAdd();
+	void resetScore();
+	int getScore();
 	virtual ~Player();
 
 	double playerX1;

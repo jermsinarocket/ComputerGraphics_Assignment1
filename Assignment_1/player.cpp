@@ -48,6 +48,14 @@ void Player::scoreAdd() {
 	score++;
 }
 
+void Player::resetScore() {
+	score = 0;
+}
+
+int Player::getScore() {
+	return score;
+}
+
 void collisionDetection() {
 
 }

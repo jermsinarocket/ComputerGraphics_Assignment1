@@ -1,6 +1,5 @@
 #include "controller.h"
-#include "net.h"
-#include "player.h"
+
 
 Controller::Controller()
 {
@@ -13,9 +12,34 @@ void Controller::renderStart() {
 	
 	if (gameRunning) {
 
+		//End if score reached
+		if (player1.getScore() == 5 || ai.getScore == 5) {
+			//gameRunning = false;
+		}
+
 		Net net(1440, 800);
 		net.render();
+
+		//Render the Player
 		player1.render();
+		ai.render();
+
+		int scores = ball.render();
+
+		//AI Scores
+		if (scores == 1) {
+			ai.scoreAdd();
+			ball.ballX = 720.0;
+			ball.ballY = 600.0;
+			ball.ySpeed = -ball.ySpeed;
+		//Player Scores
+		}else if(scores == 2){
+
+			player1.scoreAdd();
+			ball.ballX = 720.0;
+			ball.ballY = 600.0;
+			ball.ySpeed = -ball.ySpeed;
+		}
 	}
 	else {
 		//Render the start screen

@@ -1,10 +1,4 @@
 #include "shapes.h"
-#include <windows.h>
-#include <GL/glut.h>
-#include <GL/glu.h>
-#include <math.h>
-#define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
-#define PI 3.1415926535897932384626433832795
 
 
 Shapes::Shapes() {
@@ -23,6 +17,25 @@ void Shapes::quad(double x1, double y1, double x2, double y2,Color color) {
 		glVertex2f(x2, y1);
 	glEnd();
 
+}
+
+void Shapes::circle(double ballX,double ballY, double radius, Color color) {
+	
+	float angle;
+	float x2, y2;
+	glColor3f(SETCOLOR(color));
+	glBegin(GL_TRIANGLE_FAN);
+	glVertex2f(ballX, ballY);
+
+	for (angle = 1.0f; angle < 3*PI; angle += 0.2)
+	{
+		x2 = ballX + sin(angle)*radius;
+		y2 = ballY + cos(angle)*radius;
+		glVertex2f(x2, y2);
+	}
+
+	glEnd();
+	
 }
 /*
 
