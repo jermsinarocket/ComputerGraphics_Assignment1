@@ -13,7 +13,7 @@ void Controller::renderStart() {
 	if (gameRunning) {
 
 		//End if score reached
-		if (player1.getScore() == 5 || ai.getScore == 5) {
+		if (player1.getScore() == 5 || ai.getScore() == 5) {
 			//gameRunning = false;
 		}
 
@@ -25,6 +25,16 @@ void Controller::renderStart() {
 		ai.render();
 
 		int scores = ball.render();
+
+		//AI follow ball movement
+		if (ballCollision.ballRightWindowCollision(ball.ballX, ball.ballRadius)){
+			ai.speed = -(abs(ai.speed));
+		}
+
+		if (ballCollision.ballLeftNetCollision(ball.ballX, ball.ballY, ball.ballRadius, ball.xSpeed)) {
+			ai.speed = abs(ai.speed);
+		}
+
 
 		//AI Scores
 		if (scores == 1) {

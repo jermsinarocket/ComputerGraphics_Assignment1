@@ -16,8 +16,6 @@ public:
 	Ai();
 
 	void render();
-	void moveRight();
-	void moveLeft();
 	void scoreAdd();
 	void resetScore();
 	int getScore();

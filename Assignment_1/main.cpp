@@ -22,8 +22,7 @@ Net net(currentWidth,currentHeight);
 void renderScene(void) {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	
-		//Start Rendering
+	//Start Rendering
 		control.renderStart();
 		//Update screen
 		glutSwapBuffers();
@@ -65,7 +64,6 @@ void specialKeyboard(int key, int x, int y) {
 
 
 void changeSize(int w, int h) {
-
 	//Prevents resize
 	glutReshapeWindow(SCREEN_WIDTH, SCREEN_HEIGHT);
 	glutPositionWindow(50, 50);
@@ -76,8 +74,8 @@ void changeSize(int w, int h) {
 	float ratio = w * 1.0 / h;
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glViewport(0, 0, w, h);
-	gluOrtho2D(0, w, 0,h );
+	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
+	gluOrtho2D(0, w, 0, h);
 	currentWidth = w;
 	currentHeight = h;
 

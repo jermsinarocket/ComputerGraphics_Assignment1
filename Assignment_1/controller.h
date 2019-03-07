@@ -3,6 +3,7 @@
 #include "shapes.h"
 #include "ball.h"
 #include "ai.h"
+#include "collision.h"
 #include <windows.h>
 #include <GL/glut.h>
 #include <GL/glu.h>
@@ -33,6 +34,7 @@ public:
 	Ball ball;
 	float currentScore;
 	bool paused;
+	Collision ballCollision;
 protected:
 private:
 	SoundController soundcontroller;

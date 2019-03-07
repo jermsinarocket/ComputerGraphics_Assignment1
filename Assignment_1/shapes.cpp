@@ -37,21 +37,7 @@ void Shapes::circle(double ballX,double ballY, double radius, Color color) {
 	glEnd();
 	
 }
-/*
 
-void Shapes::circle(Color color) {
-	glPushMatrix();
-	glColor3f(SETCOLOR(color));
-	glBegin(GL_POLYGON);
-	for (double i = 0; i < 2 * PI; i += PI / 24)
-		glVertex3f(cos(i) * 1, sin(i) * 1, -5.0);
-	glEnd();
-	glPopMatrix();
-
-
-}
-
-*/
 Shapes::~Shapes()
 {
 	
