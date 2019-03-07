@@ -1,6 +1,6 @@
 # CSED451 Computer Graphics Assignment 1
 
-Developing a 2D volley game
+Developing a 2D volleyball game
 
 ## Language(s) used
 * C++
