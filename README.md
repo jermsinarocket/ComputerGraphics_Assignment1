@@ -1,6 +1,6 @@
 # CSED451 Computer Graphics Assignment 1
 
-Developing a 2D volley game with _**OpenGL C++**_ using _**Microsoft Visual Studio**_
+Developing a 2D volley game
 
 ## Language(s) used
 * C++
