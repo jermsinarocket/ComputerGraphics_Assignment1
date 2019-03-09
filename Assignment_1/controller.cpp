@@ -46,7 +46,9 @@ void Controller::renderStart() {
 		//AI Scores
 
 		if (scores == 1) {
+			//Add AI Score
 			ai.scoreAdd();
+			//Reset Ball Position
 			ball.ballX = BALL_X;
 			ball.ballY = BALL_Y;
 			ball.ySpeed = -ball.ySpeed;
@@ -54,7 +56,9 @@ void Controller::renderStart() {
 		//Player Scores
 		}else if(scores == 2){
 
+			//Add Player Score
 			player1.scoreAdd();
+			//Reset Ball Position
 			ball.ballX = BALL_X;
 			ball.ballY = BALL_Y;
 			ball.ySpeed = -ball.ySpeed;
@@ -62,7 +66,9 @@ void Controller::renderStart() {
 
 		//End if score reached
 		if (player1.getScore() == WINNING_POINTS || ai.getScore() == WINNING_POINTS) {
+
 			gameRunning = false;
+
 			if (player1.getScore() == WINNING_POINTS) {
 				// Do something
 			}
