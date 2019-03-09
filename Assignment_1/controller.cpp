@@ -12,16 +12,13 @@ void Controller::renderStart() {
 	
 	if (gameRunning) {
 
-		//End if score reached
-		if (player1.getScore() == 5 || ai.getScore() == 5) {
-			//gameRunning = false;
-		}
 
-		Net net(1440, 800);
+		Net net;
 		net.render();
 
 		//Render the Player
 		player1.render();
+		//Render the Ai
 		ai.render();
 
 		int scores = ball.render();
@@ -35,20 +32,45 @@ void Controller::renderStart() {
 			ai.speed = abs(ai.speed);
 		}
 
+		//collision with player/AI
+		if (ballCollision.playBallCollision(player1.playerX1, player1.playerX2, player1.playerY2, ball.ballX, ball.ballY,ball.ballRadius) || 
+			ballCollision.playBallCollision(ai.aiX1, ai.aiX2, ai.aiY2, ball.ballX, ball.ballY,ball.ballRadius)) {
+			ball.ySpeed = -ball.ySpeed;
+			ball.xSpeed = -ball.xSpeed;
+			soundcontroller.ballBounce();
+		}
+		
+
+
 
 		//AI Scores
+
 		if (scores == 1) {
 			ai.scoreAdd();
-			ball.ballX = 720.0;
-			ball.ballY = 600.0;
+			ball.ballX = BALL_X;
+			ball.ballY = BALL_Y;
 			ball.ySpeed = -ball.ySpeed;
+
 		//Player Scores
 		}else if(scores == 2){
 
 			player1.scoreAdd();
-			ball.ballX = 720.0;
-			ball.ballY = 600.0;
+			ball.ballX = BALL_X;
+			ball.ballY = BALL_Y;
 			ball.ySpeed = -ball.ySpeed;
+		}
+
+		//End if score reached
+		if (player1.getScore() == WINNING_POINTS || ai.getScore() == WINNING_POINTS) {
+			gameRunning = false;
+			if (player1.getScore() == WINNING_POINTS) {
+				// Do something
+			}
+
+			if (ai.getScore() == WINNING_POINTS) {
+				//Do something
+			}
+
 		}
 	}
 	else {
@@ -95,17 +117,22 @@ void Controller::renderBg() {
 	
 	glPushMatrix();
 		glTranslatef(10, -170, 0);
-		logo.text(color, (char*) "Direction: A / D");
+		logo.text(color, (char*) "Directions: A / D");
 	glPopMatrix();
 
 	glPushMatrix();
 		glTranslatef(10, -210, 0);
-		logo.text(color, (char*)"Player 2:");
+		logo.text(color, (char*)"Game Rules: ");
 	glPopMatrix();
 
 	glPushMatrix();
 		glTranslatef(10, -230, 0);
-	logo.text(color, (char*) "Direction: Arrow Keys (<- | ->)");
+	logo.text(color, (char*) "It's just like Volleyball!");
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(10, -250, 0);
+	logo.text(color, (char*) "First to 3 Points wins!");
 	glPopMatrix();
 
 	/*

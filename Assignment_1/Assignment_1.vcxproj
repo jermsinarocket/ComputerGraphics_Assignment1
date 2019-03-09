@@ -54,6 +54,7 @@
     <Media Include="include\clickStart.wav" />
     <Media Include="include\openingTheme.wav" />
     <Media Include="include\scoreSound.wav" />
+    <Media Include="include\winSound.wav" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

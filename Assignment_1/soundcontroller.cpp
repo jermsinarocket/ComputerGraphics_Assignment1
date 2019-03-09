@@ -23,3 +23,7 @@ void SoundController::ballBounce() {
 void SoundController::scoreSound() {
 	PlaySound(MAKEINTRESOURCE(IDR_WAVE4), NULL, SND_RESOURCE | SND_ASYNC);
 }
+
+void SoundController::winSound() {
+	PlaySound(MAKEINTRESOURCE(IDR_WAVE5), NULL, SND_RESOURCE | SND_ASYNC);
+}

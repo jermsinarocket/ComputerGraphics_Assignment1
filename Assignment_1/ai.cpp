@@ -2,11 +2,11 @@
 
 Ai::Ai() {
 
-	aiX1 = 1054.5;
-	aiY1 = 0;
-	aiX2 = 1154.5;
-	aiY2 = 150;
-	speed = -3.0;
+	aiX1 = AI_X1;
+	aiY1 = AI_Y1;
+	aiX2 = AI_X2;
+	aiY2 = AI_Y2;
+	speed = AI_SPEED;
 	score = 0;
 }
 

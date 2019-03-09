@@ -1,11 +1,11 @@
 #include "ball.h"
 
 Ball::Ball() {
-	ballRadius = 60;
-	ballX = 720.0;
-	ballY = 600.0;
-	xSpeed = -3.5;
-	ySpeed = -1.0;
+	ballRadius = BALL_RADIUS;
+	ballX = BALL_X;
+	ballY = BALL_Y;
+	xSpeed = BALL_xSpeed;
+	ySpeed = BALL_ySpeed;
 	count = 0;
 }
 
@@ -40,11 +40,11 @@ int Ball::render() {
 		//Check who scores
 
 		//AI scores
-		if (ballX <= 705 - ballRadius) {
+		if (ballX <= NET_X1 - ballRadius) {
 			return 1;
 
 		//Player Scores
-		} else if (ballX >= 745 + ballRadius){
+		} else if (ballX >= NET_X2 + ballRadius){
 			return 2;
 		}
 		

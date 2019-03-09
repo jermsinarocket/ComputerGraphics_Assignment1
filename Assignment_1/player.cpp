@@ -1,11 +1,11 @@
 #include "player.h"
 Player::Player() {
 
-	playerX1 = 325.5;
-	playerY1 = 0;
-	playerX2 = 425.5;
-	playerY2 = 150;
-	speed = 8.0;
+	playerX1 = PLAYER_X1;
+	playerY1 = PLAYER_Y1;
+	playerX2 = PLAYER_X2;
+	playerY2 = PLAYER_Y2;
+	speed = PLAYER_SPEED;
 	score = 0;
 }
 

@@ -12,7 +12,11 @@
 #include "soundcontroller.h"
 #include "text.h"
 #include "player.h"
+
 #define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
+//Points to win
+#define WINNING_POINTS 3
+
 
 using namespace std;
 class Controller

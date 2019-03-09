@@ -20,6 +20,7 @@ public:
 	void clickStart();
 	void ballBounce();
 	void scoreSound();
+	void winSound();
 protected:
 private:
 };

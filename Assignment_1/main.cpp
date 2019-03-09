@@ -16,13 +16,13 @@ using namespace std;
 
 float currentWidth = 1440;
 float currentHeight = 800;
+
 Controller control;
-Net net(currentWidth,currentHeight);
 
 void renderScene(void) {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	//Start Rendering
+	    //Start Rendering
 		control.renderStart();
 		//Update screen
 		glutSwapBuffers();
