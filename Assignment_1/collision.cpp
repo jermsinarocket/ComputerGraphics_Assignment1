@@ -109,7 +109,7 @@ bool Collision::ballLeftNetCollision(double x, double y, double radius, double s
 
 // Player/AI - Ball Collision
 bool Collision::playBallCollision(double x1, double x2, double y1, double ballX, double ballY, double ballRadius) {
-	if ((x1 <= ballX && ballX <= x2) && ballY-ballRadius <= 150) {
+	if ((x1 <= ballX && ballX <= x2) && ballY-ballRadius <= y1) {
 		return true;
 	}
 	else {

@@ -44,7 +44,9 @@ void processKeys(unsigned char key, int x, int y) {
 		exit(EXIT_SUCCESS);
 	}
 
-	
+	if (key == 'r') {
+		control.resetGame();
+	}
 
 }
 

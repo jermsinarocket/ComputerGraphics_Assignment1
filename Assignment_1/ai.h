@@ -24,6 +24,7 @@ public:
 	void render();
 	void scoreAdd();
 	void resetScore();
+	void resetAll();
 	int getScore();
 	virtual ~Ai();
 

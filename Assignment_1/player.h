@@ -26,6 +26,7 @@ public:
 	void moveLeft();
 	void scoreAdd();
 	void resetScore();
+	void resetAll();
 	int getScore();
 	virtual ~Player();
 

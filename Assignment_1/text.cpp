@@ -35,3 +35,20 @@ void Text::text(Color color, char st[]) {
 
 }
 
+
+void Text::largeText(Color color, char st[]) {
+
+	int l, i;
+	l = strlen(st);
+
+	glColor3f(SETCOLOR(color));
+	glRasterPos2f(650, 560);
+	for (i = 0; i < l; i++) {
+
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, st[i]);
+	}
+
+
+}
+
+

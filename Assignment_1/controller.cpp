@@ -10,9 +10,10 @@ void Controller::renderStart() {
 	//Render the background
 	bg.render();
 	
-	if (gameRunning) {
+	if (gameRunning && !gameOver) {
 
-
+		
+		//Render the Net
 		Net net;
 		net.render();
 
@@ -32,59 +33,103 @@ void Controller::renderStart() {
 			ai.speed = abs(ai.speed);
 		}
 
-		//collision with player/AI
-		if (ballCollision.playBallCollision(player1.playerX1, player1.playerX2, player1.playerY2, ball.ballX, ball.ballY,ball.ballRadius) || 
-			ballCollision.playBallCollision(ai.aiX1, ai.aiX2, ai.aiY2, ball.ballX, ball.ballY,ball.ballRadius)) {
-			ball.ySpeed = -ball.ySpeed;
-			ball.xSpeed = -ball.xSpeed;
-			soundcontroller.ballBounce();
+		//Check Collision with player/AI
+		if (ballCollision.playBallCollision(player1.playerX1-player1.speed, player1.playerX2+player1.speed, player1.playerY2, ball.ballX, ball.ballY,ball.ballRadius) ||
+			ballCollision.playBallCollision(ai.aiX1-ai.speed, ai.aiX2+ai.speed, ai.aiY2, ball.ballX, ball.ballY,ball.ballRadius)) {
+				ball.reverseBallY();
+				ball.reverseBallX();
+				soundcontroller.playerBallSound();
 		}
 		
 
-
+		//testing
+		//ai.scoreAdd();
 
 		//AI Scores
 
 		if (scores == 1) {
 			//Add AI Score
 			ai.scoreAdd();
+
+			if (ai.getScore() != WINNING_POINTS) {
+				soundcontroller.scoreSound();
+			}
+			else {
+
+				soundcontroller.winSound();
+			}
+			
 			//Reset Ball Position
 			ball.ballX = BALL_X;
 			ball.ballY = BALL_Y;
-			ball.ySpeed = -ball.ySpeed;
+			ball.reverseBallY();
 
 		//Player Scores
 		}else if(scores == 2){
 
 			//Add Player Score
+	
 			player1.scoreAdd();
+
+			if (player1.getScore() != WINNING_POINTS) {
+				soundcontroller.scoreSound();
+			}
+			else {
+
+				soundcontroller.winSound();
+			}
+
 			//Reset Ball Position
 			ball.ballX = BALL_X;
 			ball.ballY = BALL_Y;
-			ball.ySpeed = -ball.ySpeed;
+			ball.reverseBallY();
 		}
 
-		//End if score reached
+		//End if winning score reached
 		if (player1.getScore() == WINNING_POINTS || ai.getScore() == WINNING_POINTS) {
-
 			gameRunning = false;
-
-			if (player1.getScore() == WINNING_POINTS) {
-				// Do something
-			}
-
-			if (ai.getScore() == WINNING_POINTS) {
-				//Do something
-			}
+			gameOver = true;
 
 		}
+		
+
 	}
-	else {
+	else if (!gameOver) {
 		//Render the start screen
 		renderBg();
 		button();
 	}
+
+	//Runs if winning score reached
+	if (gameOver) {
+
+		renderWinScreen();
+
+		if (player1.getScore() == WINNING_POINTS) {
+			//Render Player 1 Win
+			Color color;
+			color.setColor("FFFFFF");
+			Text logo;
+			glPushMatrix();
+			glTranslatef(30,0,0);
+				logo.largeText(color, (char*)"Player 1 Wins!");
+			glPopMatrix();
+		}
+
+		if (ai.getScore() == WINNING_POINTS) {
+			//Render AI Wins
+			Color color;
+			color.setColor("FFFFFF");
+			Text logo;
+			glPushMatrix();
+				glTranslatef(50, 0, 0);
+				logo.largeText(color, (char*)"AI Wins!");
+			glPopMatrix();
+		}
+	}
+
 }
+
 void Controller::renderBg() {
 	Color color;
 	color.setColor("d35400");
@@ -141,12 +186,12 @@ void Controller::renderBg() {
 	logo.text(color, (char*) "First to 3 Points wins!");
 	glPopMatrix();
 
-	/*
+	
 	glPushMatrix();
 		glTranslatef(60, -340, 0);
-		logo.text(color, (char*) "PRESS 'p' to pause the game");
+		logo.text(color, (char*) "PRESS 'r' to restart the game");
 	glPopMatrix();
-	*/
+	
 	glPushMatrix();
 		glTranslatef(60, -360, 0);
 		logo.text(color, (char*) "PRESS 'esc' to exit the game");
@@ -179,10 +224,50 @@ void Controller::clicked(float x, float y) {
 		if (x < -0.4 && x > -0.50 && y < -0.55 && y > -0.6) {
 
 			gameRunning = true;
-			gameOver = false;
 			soundcontroller.clickStart();
 
 		}
 	}
 }
 
+
+void Controller::renderWinScreen() {
+
+	Color color;
+	color.setColor("d35400");
+
+	glPushMatrix();
+	glTranslatef(0, 0, 0);
+	glColor3f(SETCOLOR(color));
+		Shapes::rectangle(550.0, 450.0, 950.0, 600.0);
+	glPopMatrix();
+
+
+	color.setColor("FFFFFF");
+	Text logo;
+	glPushMatrix();
+		glTranslatef(-13,-50,0);
+		logo.text(color, (char*)"Press 'r' to restart the game");
+	glPopMatrix();
+
+
+	glPushMatrix();
+		glTranslatef(-13, -70, 0);
+		logo.text(color, (char*)"Press 'esc' to exit the game");
+	glPopMatrix();
+
+}
+
+//Reset the game
+void Controller::resetGame() {
+
+	//Reset Scores
+	player1.resetAll();
+	ai.resetAll();
+	ball.resetAll();
+
+	gameOver = false;
+	gameRunning = false;
+	soundcontroller.startTheme();
+
+}

@@ -10,35 +10,36 @@ Ball::Ball() {
 }
 
 int Ball::render() {
+
 	Color ballColor;
 	ballColor.setColor("398ec6");
 	Shapes::circle(ballX, ballY, ballRadius, ballColor); 
 
+	//Ball constantly at x,y speed
 	ballX += xSpeed;
 	ballY += ySpeed;
 
+	//Check if Ball collides with left window
 	if (ballCollision.ballLeftWindowCollision(ballX,ballRadius)
 		|| ballCollision.ballRightWindowCollision(ballX, ballRadius)) {
-		xSpeed = -xSpeed;	
+		reverseBallX();
 		count = 1;
 		soundcontroller.ballBounce();
 	}
 
+	//Check if Ball collides with top window
 	if (ballCollision.ballTopWindowCollision(ballY, ballRadius)) {
-		ySpeed = -ySpeed;
+		reverseBallY();
 		count = 1;
 		soundcontroller.ballBounce();
 	}
 
-
+	//Check if Ball collides with bottom window
 	if (ballCollision.ballBottomWindowCollision(ballY, ballRadius)) {
-		ySpeed = -ySpeed;
+		reverseBallY();
 		count = 1;
-		
-		soundcontroller.scoreSound();
 
 		//Check who scores
-
 		//AI scores
 		if (ballX <= NET_X1 - ballRadius) {
 			return 1;
@@ -50,10 +51,11 @@ int Ball::render() {
 		
 	}
 
+	//Check if ball collides with net
 	if (count != 0) {
 		if (ballCollision.ballRightNetCollision(ballX,ballY, ballRadius,xSpeed)
 			|| ballCollision.ballLeftNetCollision(ballX, ballY, ballRadius,xSpeed)){
-			xSpeed = -xSpeed;
+			reverseBallX();
 			soundcontroller.ballBounce();
 		}
 
@@ -61,6 +63,23 @@ int Ball::render() {
 
 	return 0;
 
+}
+
+//Reverse Ball's X Speed
+void Ball::reverseBallX(){
+	xSpeed = -xSpeed;
+}
+
+//Reverse Ball's Y Speed
+void  Ball::reverseBallY() {
+	ySpeed = -ySpeed;
+}
+
+
+//Reset Balls
+void Ball:: resetAll() {
+	ballX = BALL_X;
+	ballY = BALL_Y;
 }
 
 Ball::~Ball() {

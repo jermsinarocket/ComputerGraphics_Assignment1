@@ -77,9 +77,6 @@
     <ClInclude Include="soundcontroller.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="net.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
@@ -95,9 +92,12 @@
     <ClInclude Include="ai.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Assignment_1.rc">
+    <ResourceCompile Include="Assignment_11.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -105,16 +105,19 @@
     <Media Include="include\openingTheme.wav">
       <Filter>Resource Files</Filter>
     </Media>
-    <Media Include="include\bounceSound.wav">
+    <Media Include="include\clickStart.wav">
       <Filter>Resource Files</Filter>
     </Media>
-    <Media Include="include\clickStart.wav">
+    <Media Include="include\bounceSound.wav">
       <Filter>Resource Files</Filter>
     </Media>
     <Media Include="include\scoreSound.wav">
       <Filter>Resource Files</Filter>
     </Media>
     <Media Include="include\winSound.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="include\playerBallBounce.wav">
       <Filter>Resource Files</Filter>
     </Media>
   </ItemGroup>

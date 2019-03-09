@@ -17,14 +17,14 @@ void Player::render() {
 	//Create the Player
 	Shapes::quad(playerX1, playerY1, playerX2, playerY2, color);
 
+	//Check Left Window Collision
 	if (collision.leftWindowCollision(playerX1)) {
-		playerX1 += speed;
-		playerX2 += speed;
+		moveRight();
 	}
-
+	
+	//Check Right Window Collision
 	if(collision.leftNetCollision(playerX2)) {
-		playerX1 -= speed;
-		playerX2 -= speed;
+		moveLeft();
 	}
 
 	//Render the score
@@ -34,30 +34,42 @@ void Player::render() {
 	glPopMatrix();
 }
 
+//Move Player Right
 void Player::moveRight() {
 	playerX1 += speed;
 	playerX2 += speed;
 }
 
+//Move Player Left
 void Player::moveLeft(){
 	playerX1 -= speed;
 	playerX2 -= speed;
 }
 
+//Add Player's Score
 void Player::scoreAdd() {
 	score++;
 }
 
+//Reset Player's Score
 void Player::resetScore() {
 	score = 0;
 }
 
+//Get Player Score
 int Player::getScore() {
 	return score;
 }
 
-void collisionDetection() {
 
+//Reset Player
+void Player::resetAll() {
+	playerX1 = PLAYER_X1;
+	playerY1 = PLAYER_Y1;
+	playerX2 = PLAYER_X2;
+	playerY2 = PLAYER_Y2;
+	speed = PLAYER_SPEED;
+	resetScore();
 }
 Player::~Player() {
 

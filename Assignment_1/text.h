@@ -18,6 +18,7 @@ public:
 	Text();
 	void score(Color color, int score);
 	void text(Color color, char st[]);
+	void largeText(Color color, char st[]);
 protected:
 private:
 };

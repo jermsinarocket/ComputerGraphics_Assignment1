@@ -47,12 +47,13 @@
     <ClInclude Include="text.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Assignment_1.rc" />
+    <ResourceCompile Include="Assignment_11.rc" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="include\bounceSound.wav" />
     <Media Include="include\clickStart.wav" />
     <Media Include="include\openingTheme.wav" />
+    <Media Include="include\playerBallBounce.wav" />
     <Media Include="include\scoreSound.wav" />
     <Media Include="include\winSound.wav" />
   </ItemGroup>

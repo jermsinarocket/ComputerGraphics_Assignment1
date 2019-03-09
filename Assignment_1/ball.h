@@ -29,6 +29,9 @@ public:
 	Ball();
 
 	int render();
+	void reverseBallX();
+	void reverseBallY();
+	void resetAll();
 
 	virtual ~Ball();
 
@@ -38,6 +41,7 @@ public:
 	double xSpeed;
 	double ySpeed;
 	int count;
+
 	Collision ballCollision;
 
 

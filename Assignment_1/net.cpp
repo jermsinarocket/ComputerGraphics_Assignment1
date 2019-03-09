@@ -7,6 +7,7 @@ Net::Net() {
 
 void Net::render() {
 
+	//Create the Net
 	Color color;
 	color.setColor("000000");
 	//Create the net

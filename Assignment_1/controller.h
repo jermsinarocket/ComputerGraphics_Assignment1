@@ -15,7 +15,7 @@
 
 #define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
 //Points to win
-#define WINNING_POINTS 3
+#define WINNING_POINTS 2
 
 
 using namespace std;
@@ -26,22 +26,23 @@ public:
 	Controller();
 	void renderStart();
 	void renderBg();
+	void renderWinScreen();
+	void resetGame();
 	void button();
 	void clicked(float x, float y);
-	bool gameOver;
+
 	bool gameRunning;
+	bool gameOver;
 
 	Background bg;
-
 	Player player1;
 	Ai ai;
 	Ball ball;
-	float currentScore;
-	bool paused;
-	Collision ballCollision;
+
 protected:
 private:
 	SoundController soundcontroller;
+	Collision ballCollision;
 
 };
 

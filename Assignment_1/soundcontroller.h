@@ -21,6 +21,8 @@ public:
 	void ballBounce();
 	void scoreSound();
 	void winSound();
+	void playerBallSound();
+	~SoundController();
 protected:
 private:
 };
