@@ -15,6 +15,17 @@ int Ball::render() {
 	ballColor.setColor("398ec6");
 	Shapes::circle(ballX, ballY, ballRadius, ballColor); 
 
+	ballColor.setColor("ffffff");
+	glColor3f(SETCOLOR(ballColor));
+	glBegin(GL_LINE_LOOP);
+		glVertex2f(ballX-200, ballY-200);
+		glVertex2f(ballX+200, ballY-200);
+		glVertex2f(ballX+200, ballY+200);
+		glVertex2f(ballX-200, ballY+200);
+	glEnd();
+
+
+
 	//Ball constantly at x,y speed
 	ballX += xSpeed;
 	ballY += ySpeed;

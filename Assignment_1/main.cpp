@@ -67,8 +67,8 @@ void specialKeyboard(int key, int x, int y) {
 
 void changeSize(int w, int h) {
 	//Prevents resize
-	glutReshapeWindow(SCREEN_WIDTH, SCREEN_HEIGHT);
-	glutPositionWindow(50, 50);
+	//glutReshapeWindow(SCREEN_WIDTH, SCREEN_HEIGHT);
+	//glutPositionWindow(50, 50);
 
 	//Protect against divide by zero
 	if (h == 0)
@@ -77,8 +77,9 @@ void changeSize(int w, int h) {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
-	gluOrtho2D(0, w, 0, h);
-	currentWidth = w;
+	gluOrtho2D(0, 1440, 0,800);
+
+	currentWidth =  w;
 	currentHeight = h;
 
 	glDisable(GL_DEPTH_TEST);
@@ -95,6 +96,7 @@ int main(int argc, char **argv)
 	glutInitWindowPosition(50, 50);
 	glutInitWindowSize(1440,800);
 	glutCreateWindow("Pokemon Beach Volleyball");
+
 
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
