@@ -15,11 +15,11 @@
 #define PI 3.14159265f
 #define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
 
-#define BALL_RADIUS 60
-#define BALL_X 720
-#define BALL_Y 650
-#define BALL_xSpeed -3.5
-#define BALL_ySpeed -1
+#define BALL_RADIUS 0.10
+#define BALL_X 0.0
+#define BALL_Y 0.55
+#define BALL_xSpeed -0.006
+#define BALL_ySpeed -0.005
 
 
 class Ball

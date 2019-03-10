@@ -9,11 +9,11 @@
 
 #define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
 
-#define AI_X1 1054.5
-#define AI_X2 1154.5
-#define AI_Y1 0
-#define AI_Y2 150
-#define AI_SPEED -3.0
+#define AI_X1 0.43
+#define AI_X2 0.57
+#define AI_Y1 -1.0
+#define AI_Y2 -0.60
+#define AI_SPEED -0.004
 
 class Ai
 {

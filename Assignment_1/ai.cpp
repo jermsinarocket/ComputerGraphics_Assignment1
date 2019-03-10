@@ -21,7 +21,7 @@ void Ai::render() {
 
 	//Render the score
 	glPushMatrix();
-		glTranslatef(450, 50, 0);
+		glTranslatef(0.48, 0, 0);
 		aiScore.score(color, score);
 	glPopMatrix();
 

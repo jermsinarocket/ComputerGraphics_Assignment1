@@ -22,14 +22,14 @@ void Player::render() {
 		moveRight();
 	}
 	
-	//Check Right Window Collision
+	//Check Left Net Collision
 	if(collision.leftNetCollision(playerX2)) {
 		moveLeft();
 	}
 
 	//Render the score
 	glPushMatrix();
-		glTranslatef(-300, 50, 0);
+		glTranslatef(-0.55, 0, 0);
 		playerScore.score(color, score);
 	glPopMatrix();
 }
@@ -71,6 +71,7 @@ void Player::resetAll() {
 	speed = PLAYER_SPEED;
 	resetScore();
 }
+
 Player::~Player() {
 
 }

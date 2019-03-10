@@ -8,17 +8,19 @@ void Background::render() {
 	sun();
 	
 	glPushMatrix();
-		glTranslatef(0, 4.5, 0);
+		glScalef(0.8f,0.8f,1.0f);
 		cloud();
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(250, 100, 0);
+		glScalef(0.9f, 0.9f, 1.0f);
+		glTranslatef(0.5, -0.2, 0.0f);
 		cloud();
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(500, 70, 0);
+		glScalef(0.7f, 0.7f, 1.0f);
+		glTranslatef(1.08f, 0.3f, 0.0f);
 		cloud();
 	glPopMatrix();
 
@@ -33,7 +35,7 @@ void Background::sun() {
 	//colour of sun background
 	glColor3f(SETCOLOR(color));
 	glPushMatrix();
-		Shapes::rectangle(125.0, 600.0, 275.0, 750.0);	
+		Shapes::rectangle(-0.9f, 0.55f, -0.70f, 0.85f);	
 	glPopMatrix();
 
 	// color of sun
@@ -41,7 +43,7 @@ void Background::sun() {
 	color.setColor("fff200");
 	glColor3f(SETCOLOR(color));
 	glPushMatrix();
-		Shapes::rectangle(135.0, 620.0, 245.0, 740.0);
+		Shapes::rectangle(-0.88, 0.58f, -0.72f, 0.83f);
 	glPopMatrix();
 }
 
@@ -54,11 +56,11 @@ void Background::cloud() {
 	glColor3f(SETCOLOR(color));
 
 	glPushMatrix();
-		Shapes::rectangle(550.0, 500.0, 675.0, 550.0);
+		Shapes::rectangle(-0.2f, 0.6, 0.05f, 0.73f);
 	glPopMatrix();
 
 	glPushMatrix();
-		Shapes::rectangle(575.0, 500.0,650.0,600.0);
+		Shapes::rectangle(-0.15f, 0.6, 0.0f, 0.79f);
 	glPopMatrix();
 
 }

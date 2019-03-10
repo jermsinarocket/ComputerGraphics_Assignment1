@@ -9,10 +9,10 @@
 #include <GL/glu.h>
 
 #define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
-#define SCREEN_WIDTH 1440
-#define SCREEN_HEIGHT 800
-#define WINDOW_LEFTX 0.0
-#define WINDOW_BOTTOMX 0.0
+#define WINDOW_RIGHT 1.0
+#define WINDOW_TOP 1.0
+#define WINDOW_LEFT -1.0
+#define WINDOW_BOTTOM -1.0
 
 
 class Collision

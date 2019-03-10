@@ -15,7 +15,7 @@
 
 #define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
 //Points to win
-#define WINNING_POINTS 2
+#define WINNING_POINTS 3
 
 
 using namespace std;

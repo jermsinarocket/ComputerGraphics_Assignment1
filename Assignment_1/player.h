@@ -9,11 +9,11 @@
 #include <GL/glu.h>
 
 #define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
-#define PLAYER_X1 325.5
-#define PLAYER_X2 425.5
-#define PLAYER_Y1 0.0
-#define PLAYER_Y2 150.0
-#define PLAYER_SPEED 8.0
+#define PLAYER_X1 -0.57
+#define PLAYER_X2 -0.43
+#define PLAYER_Y1 -1.0
+#define PLAYER_Y2 -0.60
+#define PLAYER_SPEED 0.01
 
 class Player
 {

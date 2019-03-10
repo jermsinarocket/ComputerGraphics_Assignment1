@@ -112,7 +112,7 @@ void Controller::renderStart() {
 			color.setColor("FFFFFF");
 			Text logo;
 			glPushMatrix();
-			glTranslatef(30,0,0);
+				glTranslatef(0.05f,-0.1f,0);
 				logo.largeText(color, (char*)"Player 1 Wins!");
 			glPopMatrix();
 		}
@@ -123,7 +123,7 @@ void Controller::renderStart() {
 			color.setColor("FFFFFF");
 			Text logo;
 			glPushMatrix();
-				glTranslatef(50, 0, 0);
+				glTranslatef(0.1f, -0.1f, 0);
 				logo.largeText(color, (char*)"AI Wins!");
 			glPopMatrix();
 		}
@@ -138,14 +138,14 @@ void Controller::renderBg() {
 	glPushMatrix();
 		glTranslatef(0, 0, 0);
 		glColor3f(SETCOLOR(color));
-		Shapes::rectangle(500.0,170.0,1000.0, 620.0);
+		Shapes::rectangle(-0.3f,-0.5f,0.3f, 0.5f);
 	glPopMatrix();
 
 
 	color.setColor("e67e22");
 	glPushMatrix();
 		glColor3f(SETCOLOR(color));
-		Shapes::rectangle(520.0, 190.0, 980.0, 600.0);
+		Shapes::rectangle(-0.28f, -0.48f, 0.28f, 0.48f);
 	glPopMatrix();
 	
 	color.setColor("FFFFFF");
@@ -156,45 +156,45 @@ void Controller::renderBg() {
 
 	
 	glPushMatrix();
-		glTranslatef(10, -30, 0);
+		glTranslatef(0.01f, -0.1f, 0.0f);
 		logo.text(color, (char*)"Click below to start!");
 	glPopMatrix();
 
 	
 	glPushMatrix();
-		glTranslatef(10, -150, 0);
+		glTranslatef(0.08f, -0.33f, 0.0f);
 		logo.text(color, (char*)"Player 1:");
 	glPopMatrix();
 
 	
 	glPushMatrix();
-		glTranslatef(10, -170, 0);
+		glTranslatef(0.04f, -0.39f, 0.0f);
 		logo.text(color, (char*) "Directions: A / D");
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(10, -210, 0);
+		glTranslatef(0.07f, -0.49f, 0.0f);
 		logo.text(color, (char*)"Game Rules: ");
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(10, -230, 0);
-	logo.text(color, (char*) "It's just like Volleyball!");
+		glTranslatef(0.0f, -0.54f, 0.0f);
+		logo.text(color, (char*) "It's just like Volleyball!");
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslatef(10, -250, 0);
-	logo.text(color, (char*) "First to 3 Points wins!");
+		glTranslatef(0.02f, -0.59f, 0.0f);
+		logo.text(color, (char*) "First to 3 Points wins!");
 	glPopMatrix();
 
 	
 	glPushMatrix();
-		glTranslatef(60, -340, 0);
+		glTranslatef(0.06f, -0.78f, 0.0f);
 		logo.text(color, (char*) "PRESS 'r' to restart the game");
 	glPopMatrix();
 	
 	glPushMatrix();
-		glTranslatef(60, -360, 0);
+		glTranslatef(0.06f, -0.85f, 0.0f);
 		logo.text(color, (char*) "PRESS 'esc' to exit the game");
 	glPopMatrix();
 	
@@ -206,13 +206,13 @@ void Controller::button() {
 
 	glPushMatrix();
 		glColor3f(SETCOLOR(btnColor));
-		Shapes::rectangle(680.0, 450.0, 830.0, 500);
+		Shapes::rectangle(-0.08f, 0.15f, 0.08f, 0.25f);
 	glPopMatrix();
 
 	btnColor.setColor("ffffff");
 	Text logo;
 	glPushMatrix();
-		glTranslatef(80, -85, 0);
+		glTranslatef(0.11f, -0.21f, 0.0f);
 		logo.text(btnColor, (char*)"Start!");
 	glPopMatrix();
 }
@@ -222,7 +222,7 @@ void Controller::clicked(float x, float y) {
 
 	if (!gameRunning) {
 
-		if (x < -0.4 && x > -0.50 && y < -0.55 && y > -0.6) {
+		if (x < -0.35 && x > -0.55 && y < -0.56 && y > -0.6) {
 
 			gameRunning = true;
 			soundcontroller.clickStart();
@@ -240,20 +240,20 @@ void Controller::renderWinScreen() {
 	glPushMatrix();
 	glTranslatef(0, 0, 0);
 	glColor3f(SETCOLOR(color));
-		Shapes::rectangle(550.0, 450.0, 950.0, 600.0);
+		Shapes::rectangle(-0.3f, 0.1f, 0.3f, 0.4f);
 	glPopMatrix();
 
 
 	color.setColor("FFFFFF");
 	Text logo;
 	glPushMatrix();
-		glTranslatef(-13,-50,0);
+		glTranslatef(0.0f, -0.2f, 0);
 		logo.text(color, (char*)"Press 'r' to restart the game");
 	glPopMatrix();
 
 
 	glPushMatrix();
-		glTranslatef(-13, -70, 0);
+		glTranslatef(0.0f, -0.25f, 0);
 		logo.text(color, (char*)"Press 'esc' to exit the game");
 	glPopMatrix();
 

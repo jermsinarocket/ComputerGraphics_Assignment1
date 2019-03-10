@@ -27,7 +27,7 @@ bool Collision::rightNetCollision(double x) {
 
 // Player/AI - Window (Right) Collision
 bool Collision::rightWindowCollision(double x) {
-	if (x >= SCREEN_WIDTH) {
+	if (x >= WINDOW_RIGHT) {
 		return true;
 	}
 	else {
@@ -37,7 +37,7 @@ bool Collision::rightWindowCollision(double x) {
 
 // Player/AI - Window (Left) Collision
 bool Collision::leftWindowCollision(double x) {
-	if (x <= WINDOW_LEFTX) {
+	if (x <= WINDOW_LEFT) {
 		return true;
 	}
 	else {
@@ -48,7 +48,7 @@ bool Collision::leftWindowCollision(double x) {
 
 // Ball - Window (Left) Collision
 bool Collision::ballLeftWindowCollision(double x,double radius) {
-	if (x < WINDOW_LEFTX +radius) {
+	if (x < WINDOW_LEFT +radius) {
 		return true;
 	}
 	else {
@@ -58,7 +58,7 @@ bool Collision::ballLeftWindowCollision(double x,double radius) {
 
 // Ball - Window (Right) Collision
 bool Collision::ballRightWindowCollision(double x, double radius) {
-	if (x > SCREEN_WIDTH-radius) {
+	if (x > WINDOW_RIGHT-radius) {
 		return true;
 	}
 	else {
@@ -68,7 +68,7 @@ bool Collision::ballRightWindowCollision(double x, double radius) {
 
 // Ball - Window (Top) Collision
 bool Collision::ballTopWindowCollision(double y, double radius) {
-	if (y > SCREEN_HEIGHT - radius) {
+	if (y > WINDOW_TOP - radius) {
 		return true;
 	}
 	else {
@@ -78,7 +78,7 @@ bool Collision::ballTopWindowCollision(double y, double radius) {
 
 // Ball - Window (Bottom) Collision
 bool Collision::ballBottomWindowCollision(double y, double radius) {
-	if (y < WINDOW_BOTTOMX + radius) {
+	if (y < WINDOW_BOTTOM + radius) {
 		return true;
 	}
 	else {

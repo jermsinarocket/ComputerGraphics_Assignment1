@@ -13,7 +13,7 @@ void Text::score(Color color, int score) {
 	l = strlen(st);
 	glPushMatrix();
 		glColor3f(SETCOLOR(color));
-		glRasterPos2f(650, 560);
+		glRasterPos2f(0.00f, 0.45f);
 		for (i = 0; i < l; i++) {
 			glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, st[i]);
 		}
@@ -26,7 +26,7 @@ void Text::text(Color color, char st[]) {
 	l = strlen(st);
 
 	glColor3f(SETCOLOR(color));
-	glRasterPos2f(650, 560);
+	glRasterPos2f(-0.15f, 0.40f);
 	for (i = 0; i < l; i++) {
 
 		glutBitmapCharacter(GLUT_BITMAP_9_BY_15, st[i]);
@@ -42,7 +42,7 @@ void Text::largeText(Color color, char st[]) {
 	l = strlen(st);
 
 	glColor3f(SETCOLOR(color));
-	glRasterPos2f(650, 560);
+	glRasterPos2f(-0.15f, 0.40f);
 	for (i = 0; i < l; i++) {
 
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, st[i]);

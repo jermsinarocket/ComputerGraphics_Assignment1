@@ -18,10 +18,10 @@ int Ball::render() {
 	ballColor.setColor("ffffff");
 	glColor3f(SETCOLOR(ballColor));
 	glBegin(GL_LINE_LOOP);
-		glVertex2f(ballX-200, ballY-200);
-		glVertex2f(ballX+200, ballY-200);
-		glVertex2f(ballX+200, ballY+200);
-		glVertex2f(ballX-200, ballY+200);
+		glVertex2f(ballX - 0.2, ballY - 0.2);
+		glVertex2f(ballX + 0.2, ballY - 0.2);
+		glVertex2f(ballX + 0.2, ballY + 0.2);
+		glVertex2f(ballX - 0.2, ballY + 0.2);
 	glEnd();
 
 

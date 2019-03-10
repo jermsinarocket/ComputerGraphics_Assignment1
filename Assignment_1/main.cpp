@@ -64,7 +64,8 @@ void specialKeyboard(int key, int x, int y) {
 }
 
 
-
+/* Handler for window re-size event. Called back when the window first appears and
+   whenever the window is re-sized with its new width and height */
 void changeSize(GLsizei w, GLsizei h) {
 	//Prevents resize
 	//glutReshapeWindow(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -73,14 +74,14 @@ void changeSize(GLsizei w, GLsizei h) {
 	//Protect against divide by zero
 	if (h == 0)
 		h = 1;
-	float ratio = (GLfloat)w  / (GLfloat)h;
+
+	float aspect = w  / h;
 	glViewport(0, 0, w, h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
-
-	gluOrtho2D(0, 1440, 0,800);
-
+	gluOrtho2D(-1.0, 1.0, -1.0, 1.0);
+	
 
 	currentWidth =  w;
 	currentHeight = h;
@@ -114,6 +115,7 @@ int main(int argc, char **argv)
 	glutKeyboardFunc(processKeys);
 	glutMouseFunc(processMouse);
 	glutSpecialFunc(specialKeyboard);
+	//glutFullScreen();
 
 	glutMainLoop();
 
