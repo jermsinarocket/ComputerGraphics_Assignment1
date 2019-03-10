@@ -65,7 +65,7 @@ void specialKeyboard(int key, int x, int y) {
 
 
 
-void changeSize(int w, int h) {
+void changeSize(GLsizei w, GLsizei h) {
 	//Prevents resize
 	//glutReshapeWindow(SCREEN_WIDTH, SCREEN_HEIGHT);
 	//glutPositionWindow(50, 50);
@@ -73,11 +73,14 @@ void changeSize(int w, int h) {
 	//Protect against divide by zero
 	if (h == 0)
 		h = 1;
-	float ratio = w * 1.0 / h;
+	float ratio = (GLfloat)w  / (GLfloat)h;
+	glViewport(0, 0, w, h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
+
+
 	gluOrtho2D(0, 1440, 0,800);
+
 
 	currentWidth =  w;
 	currentHeight = h;

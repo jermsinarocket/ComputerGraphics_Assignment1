@@ -33,7 +33,7 @@ void Background::sun() {
 	//colour of sun background
 	glColor3f(SETCOLOR(color));
 	glPushMatrix();
-		Shapes::rectangle(125.0, 600.0, 275.0, 750.0);
+		Shapes::rectangle(125.0, 600.0, 275.0, 750.0);	
 	glPopMatrix();
 
 	// color of sun
