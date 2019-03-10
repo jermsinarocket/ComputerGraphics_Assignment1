@@ -22,7 +22,6 @@ void Background::render() {
 		cloud();
 	glPopMatrix();
 
-
 }
 
 void Background::sun() {
