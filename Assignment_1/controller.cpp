@@ -13,7 +13,11 @@ void Controller::renderStart() {
 	
 	if (gameRunning && !gameOver) {
 
-		
+		//Boundary Box
+		ballCollision.render();
+
+		bg.render();
+
 		//Render the Net
 		Net net;
 		net.render();
@@ -30,7 +34,7 @@ void Controller::renderStart() {
 			ai.speed = -(abs(ai.speed));
 		}
 
-		if (ballCollision.ballLeftNetCollision(ball.ballX, ball.ballY, ball.ballRadius, ball.xSpeed)) {
+		if (ballCollision.ballRightNetCollision(ball.ballX, ball.ballY, ball.ballRadius, ball.xSpeed)) {
 			ai.speed = abs(ai.speed);
 		}
 
@@ -169,7 +173,7 @@ void Controller::renderBg() {
 	
 	glPushMatrix();
 		glTranslatef(0.04f, -0.39f, 0.0f);
-		logo.text(color, (char*) "Directions: A / D");
+		logo.text(color, (char*) "Directions: <- / ->");
 	glPopMatrix();
 
 	glPushMatrix();
@@ -187,7 +191,11 @@ void Controller::renderBg() {
 		logo.text(color, (char*) "First to 3 Points wins!");
 	glPopMatrix();
 
-	
+	glPushMatrix();
+	glTranslatef(0.06f, -0.71f, 0.0f);
+		logo.text(color, (char*) "PRESS 'z' to follow the ball");
+	glPopMatrix();
+
 	glPushMatrix();
 		glTranslatef(0.06f, -0.78f, 0.0f);
 		logo.text(color, (char*) "PRESS 'r' to restart the game");

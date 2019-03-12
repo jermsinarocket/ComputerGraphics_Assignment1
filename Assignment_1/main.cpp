@@ -13,22 +13,27 @@ using namespace std;
 #define SCREEN_WIDTH 1440
 #define SCREEN_HEIGHT 800
 #define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
+#define ZOOM_FACTOR 0.30
 
 float currentWidth = 1440;
 float currentHeight = 800;
-
 Controller control;
+
 
 void renderScene(void) {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	    //Start Rendering
-		control.renderStart();
-		//Update screen
-		glutSwapBuffers();
+
+	//Start Rendering
+	control.renderStart();
+	//Update screen
+	glutSwapBuffers();
 	
 
 }
+
+
+
 
 //For Start Buttton
 void processMouse(int button, int state, int x, int y) {
@@ -46,6 +51,28 @@ void processKeys(unsigned char key, int x, int y) {
 
 	if (key == 'r') {
 		control.resetGame();
+	}
+
+	if (key == 'z') {
+
+		if (control.ball.zoom) {
+			control.ball.zoom = false;
+			glMatrixMode(GL_PROJECTION);
+			glLoadIdentity();
+			gluOrtho2D(-1.0, 1.0, -1.0, 1.0);
+
+			glMatrixMode(GL_MODELVIEW);
+		}
+		else {
+			control.ball.zoom = true;
+
+			glMatrixMode(GL_PROJECTION);
+			glLoadIdentity();
+			gluOrtho2D(control.ball.ballX - ZOOM_FACTOR, control.ball.ballX + ZOOM_FACTOR, control.ball.ballY - ZOOM_FACTOR, control.ball.ballY + ZOOM_FACTOR);
+
+			glMatrixMode(GL_MODELVIEW);
+
+		}
 	}
 
 }
@@ -67,6 +94,7 @@ void specialKeyboard(int key, int x, int y) {
 /* Handler for window re-size event. Called back when the window first appears and
    whenever the window is re-sized with its new width and height */
 void changeSize(GLsizei w, GLsizei h) {
+
 	//Prevents resize
 	//glutReshapeWindow(SCREEN_WIDTH, SCREEN_HEIGHT);
 	//glutPositionWindow(50, 50);
@@ -80,8 +108,16 @@ void changeSize(GLsizei w, GLsizei h) {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
-	gluOrtho2D(-1.0, 1.0, -1.0, 1.0);
-	
+	if (control.ball.zoom) {
+		gluOrtho2D(control.ball.ballX - 0.3f, control.ball.ballX + 0.3f, control.ball.ballY - 0.3f, control.ball.ballY + 0.3f);
+
+	}
+	else {
+		gluOrtho2D(-1.0, 1.0, -1.0, 1.0);
+
+	}
+
+
 
 	currentWidth =  w;
 	currentHeight = h;
@@ -115,7 +151,9 @@ int main(int argc, char **argv)
 	glutKeyboardFunc(processKeys);
 	glutMouseFunc(processMouse);
 	glutSpecialFunc(specialKeyboard);
-	//glutFullScreen();
+
+	//Fullscreen mode
+	glutFullScreen();
 
 	glutMainLoop();
 

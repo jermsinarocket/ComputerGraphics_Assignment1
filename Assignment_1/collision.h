@@ -20,6 +20,9 @@ class Collision
 public:
 	/** Default constructor */
 	Collision();
+	
+	//Render Boundaries
+	void render();
 
 	//Player/AI - Net Collision
 	bool leftNetCollision(double x);
@@ -51,6 +54,7 @@ public:
 	double windowRightX;
 	double windowTopX;
 	double windowBottomX;
+
 
 
 protected:

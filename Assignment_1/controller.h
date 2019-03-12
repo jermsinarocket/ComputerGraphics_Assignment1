@@ -38,11 +38,12 @@ public:
 	Player player1;
 	Ai ai;
 	Ball ball;
+	Collision ballCollision;
 
 protected:
 private:
 	SoundController soundcontroller;
-	Collision ballCollision;
+
 
 };
 

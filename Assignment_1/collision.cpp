@@ -4,6 +4,17 @@ Collision::Collision() {
 
 }
 
+void Collision::render() {
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3d(255, 0, 0);
+	glBegin(GL_LINE_LOOP);
+		glVertex2f(WINDOW_LEFT, WINDOW_BOTTOM);
+		glVertex2f(WINDOW_LEFT, WINDOW_TOP);
+		glVertex2f(WINDOW_RIGHT, WINDOW_TOP);
+		glVertex2f(WINDOW_RIGHT, WINDOW_BOTTOM);
+	glEnd();
+}
+
 // Player/AI - Net (Left) Collision
 bool Collision::leftNetCollision(double x) {
 	if (x >= NET_X1) {

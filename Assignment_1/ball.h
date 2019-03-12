@@ -42,6 +42,10 @@ public:
 	double ySpeed;
 	int count;
 
+	bool zoom;
+	float translateX;
+	float translateY;
+
 	Collision ballCollision;
 
 

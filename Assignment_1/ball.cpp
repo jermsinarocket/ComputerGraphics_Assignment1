@@ -7,6 +7,9 @@ Ball::Ball() {
 	xSpeed = BALL_xSpeed;
 	ySpeed = BALL_ySpeed;
 	count = 0;
+	zoom = false;
+	translateX = 0.0f;
+	translateY = 0.0f;
 }
 
 int Ball::render() {
@@ -14,21 +17,40 @@ int Ball::render() {
 	Color ballColor;
 	ballColor.setColor("398ec6");
 	Shapes::circle(ballX, ballY, ballRadius, ballColor); 
-
 	ballColor.setColor("ffffff");
+
+	/*
 	glColor3f(SETCOLOR(ballColor));
-	glBegin(GL_LINE_LOOP);
+		glBegin(GL_LINE_LOOP);
 		glVertex2f(ballX - 0.2, ballY - 0.2);
 		glVertex2f(ballX + 0.2, ballY - 0.2);
 		glVertex2f(ballX + 0.2, ballY + 0.2);
 		glVertex2f(ballX - 0.2, ballY + 0.2);
-	glEnd();
+	glEnd();*/
 
-
-
-	//Ball constantly at x,y speed
+	//Ball moves constantly at x,y speed
 	ballX += xSpeed;
 	ballY += ySpeed;
+	
+	if(zoom) {
+
+		glTranslatef(-xSpeed, -ySpeed, 0.0f);
+
+		translateX += -xSpeed;
+		translateY += -ySpeed;
+
+	}
+	else {
+
+		glTranslatef(-translateX, -translateY, 0.0f);
+
+		translateX = 0.0f;
+		translateY = 0.0f;
+
+
+	}
+
+
 
 	//Check if Ball collides with left window
 	if (ballCollision.ballLeftWindowCollision(ballX,ballRadius)
@@ -47,6 +69,17 @@ int Ball::render() {
 
 	//Check if Ball collides with bottom window
 	if (ballCollision.ballBottomWindowCollision(ballY, ballRadius)) {
+
+		if (zoom) {
+
+			glTranslatef(-translateX, -translateY, 0.0f);
+
+			translateX = 0.0f;
+			translateY = 0.0f;
+			zoom = false;
+			zoom = true;
+		}
+
 		reverseBallY();
 		count = 1;
 
@@ -59,6 +92,9 @@ int Ball::render() {
 		} else if (ballX >= NET_X2 + ballRadius){
 			return 2;
 		}
+
+
+	
 		
 	}
 
