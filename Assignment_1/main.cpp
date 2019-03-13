@@ -12,6 +12,7 @@
 #include <iostream> 
 #include <GL/glew.h> 
 #include <GL/glut.h> 
+#include <GL/glu.h>
 #include <windows.h>
 #include "controller.h"
 
@@ -36,7 +37,6 @@ void renderScene(void) {
 	control.renderStart();
 	//Update screen
 	glutSwapBuffers();
-	
 
 }
 

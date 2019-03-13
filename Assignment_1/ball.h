@@ -28,6 +28,7 @@
 #define BALL_RADIUS 0.10
 #define BALL_X 0.0
 #define BALL_Y 0.55
+ //Can be changed to increase/decrease speed
 #define BALL_xSpeed -0.006
 #define BALL_ySpeed -0.005
 

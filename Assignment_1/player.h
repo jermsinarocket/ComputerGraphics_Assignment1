@@ -23,6 +23,7 @@
 #define PLAYER_X2 -0.43
 #define PLAYER_Y1 -1.0
 #define PLAYER_Y2 -0.60
+//Can be changed to increase/decrease speed
 #define PLAYER_SPEED 0.01
 
 class Player

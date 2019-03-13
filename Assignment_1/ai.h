@@ -22,6 +22,7 @@
 #define AI_X2 0.57
 #define AI_Y1 -1.0
 #define AI_Y2 -0.60
+//Can be changed to increase/decrease speed
 #define AI_SPEED -0.004
 
 class Ai
