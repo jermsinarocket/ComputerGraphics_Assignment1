@@ -1,3 +1,14 @@
+/**
+ * @file colliision.cpp
+ *
+ * @brief CSED541 Computer Graphics Assignment 1
+ *
+ * @author Tan Wei Xuan (49003140), Ong Wei Hua (49003139)
+ * Contact: tanweixuan@postech.ac.kr, ongweihua@postech.ac.kr
+ *
+ */
+
+
 #include "collision.h"
 
 Collision::Collision() {
@@ -5,6 +16,7 @@ Collision::Collision() {
 }
 
 void Collision::render() {
+
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3d(255, 0, 0);
 	glBegin(GL_LINE_LOOP);

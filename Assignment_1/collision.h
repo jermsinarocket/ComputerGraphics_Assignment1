@@ -1,8 +1,19 @@
+/**
+ * @file collision.h
+ *
+ * @brief CSED541 Computer Graphics Assignment 1
+ *
+ * @author Tan Wei Xuan (49003140), Ong Wei Hua (49003139)
+ * Contact: tanweixuan@postech.ac.kr, ongweihua@postech.ac.kr
+ *
+ */
+
+
 #ifndef COLLISION_H
 #define COLLISION_H
+
 #include "shapes.h"
 #include "colour.h"
-#include "text.h"
 #include "net.h"
 #include <windows.h>
 #include <GL/glut.h>

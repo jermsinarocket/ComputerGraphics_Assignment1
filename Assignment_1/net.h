@@ -1,5 +1,17 @@
+/**
+ * @file net.h
+ *
+ * @brief CSED541 Computer Graphics Assignment 1
+ *
+ * @author Tan Wei Xuan (49003140), Ong Wei Hua (49003139)
+ * Contact: tanweixuan@postech.ac.kr, ongweihua@postech.ac.kr
+ *
+ */
+
+
 #ifndef NET_H
 #define NET_H
+
 #include "colour.h"
 #include <windows.h>
 #include <GL/glut.h>

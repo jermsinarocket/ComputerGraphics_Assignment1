@@ -1,3 +1,14 @@
+/**
+ * @file ai.cpp
+ *
+ * @brief CSED541 Computer Graphics Assignment 1
+ *
+ * @author Tan Wei Xuan (49003140), Ong Wei Hua (49003139)
+ * Contact: tanweixuan@postech.ac.kr, ongweihua@postech.ac.kr
+ *
+ */
+
+
 #include "ai.h"
 
 Ai::Ai() {

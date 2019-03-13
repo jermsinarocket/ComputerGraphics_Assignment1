@@ -1,12 +1,20 @@
+/**
+ * @file main.cpp
+ *
+ * @brief CSED541 Computer Graphics Assignment 1
+ *
+ * @author Tan Wei Xuan (49003140), Ong Wei Hua (49003139)
+ * Contact: tanweixuan@postech.ac.kr, ongweihua@postech.ac.kr
+ *
+ */
+
+
 #include <iostream> 
 #include <GL/glew.h> 
 #include <GL/glut.h> 
 #include <windows.h>
-#include "colour.h"
-#include "shapes.h"
-#include "background.h"
 #include "controller.h"
-#include "player.h"
+
 
 using namespace std;
 
@@ -35,7 +43,7 @@ void renderScene(void) {
 
 
 
-//For Start Buttton
+//For Mouse Click
 void processMouse(int button, int state, int x, int y) {
 	if (state == GLUT_DOWN) {
 		if (button == GLUT_LEFT_BUTTON) {
@@ -44,6 +52,7 @@ void processMouse(int button, int state, int x, int y) {
 	}
 }
 
+//For Keyboard Inputs (Keys)
 void processKeys(unsigned char key, int x, int y) {
 	if (key == 27){
 		exit(EXIT_SUCCESS);
@@ -59,6 +68,8 @@ void processKeys(unsigned char key, int x, int y) {
 			control.ball.zoom = false;
 			glMatrixMode(GL_PROJECTION);
 			glLoadIdentity();
+
+			//Reset Clipping to fixed screen
 			gluOrtho2D(-1.0, 1.0, -1.0, 1.0);
 
 			glMatrixMode(GL_MODELVIEW);
@@ -68,6 +79,8 @@ void processKeys(unsigned char key, int x, int y) {
 
 			glMatrixMode(GL_PROJECTION);
 			glLoadIdentity();
+
+			//Clips screen to ball
 			gluOrtho2D(control.ball.ballX - ZOOM_FACTOR, control.ball.ballX + ZOOM_FACTOR, control.ball.ballY - ZOOM_FACTOR, control.ball.ballY + ZOOM_FACTOR);
 
 			glMatrixMode(GL_MODELVIEW);
@@ -77,6 +90,8 @@ void processKeys(unsigned char key, int x, int y) {
 
 }
 
+
+//For directional keyboard keys
 void specialKeyboard(int key, int x, int y) { 
 	
 	switch (key) { 
@@ -109,10 +124,12 @@ void changeSize(GLsizei w, GLsizei h) {
 	glLoadIdentity();
 
 	if (control.ball.zoom) {
+
 		gluOrtho2D(control.ball.ballX - 0.3f, control.ball.ballX + 0.3f, control.ball.ballY - 0.3f, control.ball.ballY + 0.3f);
 
 	}
 	else {
+
 		gluOrtho2D(-1.0, 1.0, -1.0, 1.0);
 
 	}
@@ -153,7 +170,7 @@ int main(int argc, char **argv)
 	glutSpecialFunc(specialKeyboard);
 
 	//Fullscreen mode
-	glutFullScreen();
+	//glutFullScreen();
 
 	glutMainLoop();
 

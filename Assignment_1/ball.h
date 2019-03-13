@@ -1,11 +1,21 @@
+/**
+ * @file ball.h
+ *
+ * @brief CSED541 Computer Graphics Assignment 1
+ *
+ * @author Tan Wei Xuan (49003140), Ong Wei Hua (49003139)
+ * Contact: tanweixuan@postech.ac.kr, ongweihua@postech.ac.kr
+ *
+ */
+
+
 #ifndef BALL_H
 #define BALL_H
+
 #include "shapes.h"
 #include "colour.h"
-#include "text.h"
 #include "collision.h"
 #include "net.h"
-#include "player.h"
 #include  "soundcontroller.h"
 #include <windows.h>
 #include <GL/glut.h>

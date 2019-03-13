@@ -1,11 +1,20 @@
+/**
+* @file text.cpp
+*
+* @brief CSED541 Computer Graphics Assignment 1
+*
+* @author Tan Wei Xuan(49003140), Ong Wei Hua(49003139)
+* Contact: tanweixuan@postech.ac.kr, ongweihua@postech.ac.kr
+*
+*/
+
 #include "text.h"
-#include <cstdio>
-using namespace std;
-#define SETCOLOR(color) color.Getred(), color.Getgreen(), color.Getblue()
+
 Text::Text()
 {
 }
 
+//To Display Scores
 void Text::score(Color color, int score) {
 	int l, i;
 	char st[50];
@@ -20,6 +29,7 @@ void Text::score(Color color, int score) {
 	glPopMatrix();
 }
 
+//To Display General Text
 void Text::text(Color color, char st[]) {
 
 	int l, i;
@@ -35,7 +45,7 @@ void Text::text(Color color, char st[]) {
 
 }
 
-
+//To Display larger text
 void Text::largeText(Color color, char st[]) {
 
 	int l, i;

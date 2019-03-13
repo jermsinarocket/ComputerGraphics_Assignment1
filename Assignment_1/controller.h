@@ -1,5 +1,17 @@
+/**
+ * @file controller.h
+ *
+ * @brief CSED541 Computer Graphics Assignment 1
+ *
+ * @author Tan Wei Xuan (49003140), Ong Wei Hua (49003139)
+ * Contact: tanweixuan@postech.ac.kr, ongweihua@postech.ac.kr
+ *
+ */
+
+
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
+
 #include "shapes.h"
 #include "ball.h"
 #include "ai.h"
@@ -19,10 +31,11 @@
 
 
 using namespace std;
+
 class Controller
 {
 public:
-	/** Default constructor */
+	
 	Controller();
 	void renderStart();
 	void renderBg();
