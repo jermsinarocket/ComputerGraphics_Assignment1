@@ -110,8 +110,8 @@ bool Collision::ballBottomWindowCollision(double y, double radius) {
 }
 
 // Ball - Net (Right) Collision
-bool Collision::ballRightNetCollision(double x, double y, double radius, double speed) {
-	if (x >= NET_X2 + speed + radius  && x <= NET_X2  + radius && y <= NET_Y2) {
+bool Collision::ballRightNetCollision(double x, double y, double radius) {
+	if (x >= NET_X2 + radius  && x <= NET_X2  + radius && y <= NET_Y2) {
 		return true;
 	}
 	else {
@@ -121,8 +121,8 @@ bool Collision::ballRightNetCollision(double x, double y, double radius, double 
 
 
 // Ball - Net (Tp[) Collision
-bool Collision::ballLeftNetCollision(double x, double y, double radius, double speed) {
-	if (x >= NET_X1- speed - radius && x <= NET_X1 - radius && y <= NET_Y2) {
+bool Collision::ballLeftNetCollision(double x, double y, double radius) {
+	if (x >= NET_X1 - radius && x <= NET_X1 - radius && y <= NET_Y2) {
 		return true;
 	}
 	else {

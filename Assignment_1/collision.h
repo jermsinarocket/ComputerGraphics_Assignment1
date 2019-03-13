@@ -50,8 +50,8 @@ public:
 	bool ballBottomWindowCollision(double y, double radius);
 
 	//Ball -Net Collision
-	bool ballRightNetCollision(double x,double y, double radius,double speed);
-	bool ballLeftNetCollision(double x,double y, double radius,double speed);
+	bool ballRightNetCollision(double x,double y, double radius);
+	bool ballLeftNetCollision(double x,double y, double radius);
 
 	//Player/AI - Ball Collision
 	bool playBallCollision(double x1, double x2, double y1, double ballX, double ballY, double ballRadius);

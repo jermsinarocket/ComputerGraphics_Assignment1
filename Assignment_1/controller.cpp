@@ -45,7 +45,7 @@ void Controller::renderStart() {
 			ai.speed = -(abs(ai.speed));
 		}
 
-		if (ballCollision.ballRightNetCollision(ball.ballX, ball.ballY, ball.ballRadius, ball.xSpeed)) {
+		if (ballCollision.ballRightNetCollision(ball.ballX, ball.ballY, ball.ballRadius)) {
 			ai.speed = abs(ai.speed);
 		}
 

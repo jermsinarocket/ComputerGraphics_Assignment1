@@ -111,8 +111,8 @@ int Ball::render() {
 
 	//Check if ball collides with net
 	if (count != 0) {
-		if (ballCollision.ballRightNetCollision(ballX,ballY, ballRadius,xSpeed)
-			|| ballCollision.ballLeftNetCollision(ballX, ballY, ballRadius,xSpeed)){
+		if (ballCollision.ballRightNetCollision(ballX,ballY, ballRadius)
+			|| ballCollision.ballLeftNetCollision(ballX, ballY, ballRadius)){
 			reverseBallX();
 			soundcontroller.ballBounce();
 		}

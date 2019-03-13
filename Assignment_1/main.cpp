@@ -125,7 +125,7 @@ void changeSize(GLsizei w, GLsizei h) {
 
 	if (control.ball.zoom) {
 
-		gluOrtho2D(control.ball.ballX - 0.3f, control.ball.ballX + 0.3f, control.ball.ballY - 0.3f, control.ball.ballY + 0.3f);
+		gluOrtho2D(control.ball.ballX - ZOOM_FACTOR, control.ball.ballX + ZOOM_FACTOR, control.ball.ballY - ZOOM_FACTOR, control.ball.ballY + ZOOM_FACTOR);
 
 	}
 	else {
@@ -170,7 +170,7 @@ int main(int argc, char **argv)
 	glutSpecialFunc(specialKeyboard);
 
 	//Fullscreen mode
-	//glutFullScreen();
+	glutFullScreen();
 
 	glutMainLoop();
 
