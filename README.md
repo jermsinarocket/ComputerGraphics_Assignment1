@@ -1,4 +1,4 @@
-# CSED451 Computer Graphics Assignment 1, Spring 2019, POSTECH
+# CSED451 Computer Graphics Assignment 1 (Spring 2019, POSTECH)
 
 Developing a 2D volleyball game
 
