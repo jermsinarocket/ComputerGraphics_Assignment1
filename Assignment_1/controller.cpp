@@ -58,9 +58,6 @@ void Controller::renderStart() {
 		}
 		
 
-		//testing
-		//ai.scoreAdd();
-
 		//AI Scores
 
 		if (scores == 1) {
